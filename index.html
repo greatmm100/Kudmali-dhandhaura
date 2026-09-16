@@ -909,19 +909,24 @@ async function loadAdminContent(){
   let rows=[];
   try{ rows=await dbRequest('site_content',{query:'?select=*&order=id.asc'}); }catch(e){ $('contentStatus').textContent='❌ सामग्री लोड नहीं हुई: '+e.message; return; }
   rows=(rows||[]).map(x=>({...x,content_key:x.section_key||''}));
-  const existing=new Set(rows.map(x=>x.content_key).filter(Boolean));
+  // Build the editor from actual webpage elements first. This prevents an old/orphan
+  // site_content row (for example a custom "धन्धौरा" row) from hijacking the editor.
+  const dbRows=rows;
+  const byKey=new Map(dbRows.filter(x=>x.content_key).map(x=>[x.content_key,x]));
+  const domRows=[];
   document.querySelectorAll('[data-content-key]').forEach(el=>{
     const key=el.getAttribute('data-content-key');
-    if(!key || existing.has(key))return;
-    let value='';
-    if(el.tagName==='INPUT' || el.tagName==='TEXTAREA') value=el.placeholder||'';
-    else value=el.innerText||el.textContent||'';
-    if(value.trim()) rows.push({id:null,section_key:key,content_key:key,title:key.replace(/_/g,' '),content:value.trim(),is_published:true,_domOnly:true});
+    if(!key || domRows.some(x=>x.content_key===key))return;
+    const db=byKey.get(key);
+    let fallback='';
+    if(el.tagName==='INPUT' || el.tagName==='TEXTAREA') fallback=el.placeholder||'';
+    else fallback=el.innerText||el.textContent||'';
+    domRows.push(db ? {...db,content_key:key} : {id:null,section_key:key,content_key:key,title:key.replace(/_/g,' '),content:fallback.trim(),is_published:true,_domOnly:true});
   });
   const meta=document.querySelector('meta[name="description"]');
-  if(meta && !existing.has('meta_description')) rows.push({id:null,section_key:'meta_description',content_key:'meta_description',title:'SEO Meta Description',content:meta.getAttribute('content')||'',is_published:true,_domOnly:true});
-  if(!existing.has('page_title')) rows.push({id:null,section_key:'page_title',content_key:'page_title',title:'Browser Page Title',content:document.title||'',is_published:true,_domOnly:true});
-  rows=[...rows.filter(x=>!['hero_image','site_background_image'].includes(x.content_key)),...editorImageRows()];
+  if(meta){ const db=byKey.get('meta_description'); domRows.push(db||{id:null,section_key:'meta_description',content_key:'meta_description',title:'SEO Meta Description',content:meta.getAttribute('content')||'',is_published:true,_domOnly:true}); }
+  { const db=byKey.get('page_title'); domRows.push(db||{id:null,section_key:'page_title',content_key:'page_title',title:'Browser Page Title',content:document.title||'',is_published:true,_domOnly:true}); }
+  rows=[...domRows.filter(x=>!['hero_image','site_background_image'].includes(x.content_key)),...editorImageRows()];
 
   const groups={};
   rows.forEach(x=>{const g=contentGroupLabel(x.content_key);(groups[g]||(groups[g]=[])).push(x);});
@@ -1470,7 +1475,6 @@ async function aiConvertRachna(mode){
 }
 function closeRachnaReader(){const m=document.getElementById('rachnaReaderModal');if(m)m.classList.remove('show');document.body.style.overflow='';pendingRachnaItem=null;}
 window.addEventListener('keydown',e=>{if(e.key==='Escape'){closeReaderDisclaimer();closeRachnaReader();}});
-  <!-- Vercel Git deployment -->
 </script>
 </body>
 </html>
