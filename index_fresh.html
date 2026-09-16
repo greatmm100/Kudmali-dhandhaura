@@ -89,6 +89,19 @@ nav{background:rgba(7,91,56,.94);backdrop-filter:blur(10px);}
 /* ===== Fresh Visit Experience ===== */
 .fresh-visit-banner{margin:14px auto 0;max-width:1100px;padding:10px 14px;border-radius:14px;background:rgba(255,248,235,.92);border:1px solid rgba(180,120,45,.22);font-size:13px;line-height:1.5;text-align:center}
 .fresh-feature{margin:18px auto;max-width:1100px}.fresh-feature .card{cursor:pointer;transition:transform .2s ease,box-shadow .2s ease}.fresh-feature .card:hover{transform:translateY(-2px)}.fresh-kicker{font-size:12px;font-weight:700;letter-spacing:.03em;opacity:.75}.fresh-recommendations{margin-top:18px}.fresh-recommendations .grid{margin-top:10px}.fresh-chip{display:inline-block;margin:3px 4px 3px 0;padding:4px 9px;border-radius:999px;background:#f4ead8;font-size:11px}@media(max-width:700px){.fresh-visit-banner{margin:10px 12px}.fresh-feature{margin:12px}.fresh-recommendations{margin-top:12px}}
+
+/* ===== Category article navigation fix ===== */
+.category-published-box{margin-top:22px;padding-top:18px;border-top:1px solid rgba(45,90,70,.14)}
+.category-published-box h3{margin:0 0 6px}
+.category-published-count{font-size:13px;opacity:.75;margin-bottom:12px}
+.category-published-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.category-published-grid .card{cursor:pointer}
+.category-sub-links{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 4px}
+.category-sub-links button{border:1px solid #cbdccf;background:#f7faf8;border-radius:999px;padding:7px 11px;cursor:pointer;font:inherit;color:#214d39}
+.category-sub-links button:hover,.category-sub-links button.active{background:#e8f3ec}
+@media(max-width:800px){.category-published-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.category-published-grid{grid-template-columns:1fr}}
+
 </style>
 <style>
 #rachnaReaderModal{position:fixed;inset:0;z-index:100000;display:none;align-items:center;justify-content:center;padding:14px;background:rgba(20,18,12,.68);backdrop-filter:blur(5px)}
@@ -151,7 +164,7 @@ nav{background:rgba(7,91,56,.94);backdrop-filter:blur(10px);}
 
 <section class="section" id="team-kalam">
 <div class="container">
-<div class="title"><h2>🖋️ धन्धौरा की कलम से</h2><span class="meta">टीम धन्धौरा द्वारा प्रकाशित सामग्री</span></div>
+<div class="title"><h2>🖋️ टीम धन्धौरा की कलम से</h2><span class="meta">टीम धन्धौरा द्वारा प्रकाशित सामग्री</span></div>
 <p class="meta" style="margin-top:-12px;margin-bottom:18px">यहाँ टीम धन्धौरा द्वारा प्रकाशित लेख/रचनाएँ विषय के अनुसार अलग-अलग श्रेणियों में दिखाई जाएँगी। एक ही रचना एक से अधिक श्रेणी और उप-श्रेणी में हो सकती है।</p>
 <div id="teamKalamCategoryTiles" class="cards"></div>
 <div id="teamKalamSubcategoryPanel" class="subcategory-panel" style="display:none"></div>
@@ -159,11 +172,14 @@ nav{background:rgba(7,91,56,.94);backdrop-filter:blur(10px);}
 <div class="grid" id="teamKalamArticlesGrid"></div>
 </div></section>
 
-<section class="section tab-section" id="language"><div class="container"><div class="title"><h2 data-content-key="language_title">📖 कुड़माली भाषा</h2></div><div class="grid"><div class="card"><h3>भाषा परिचय</h3><p>कुड़माली भाषा, हामर लोकजीवन, समाज, गीत, साहित्य आ सांस्कृतिक पहचान से जुड़ल भाषा के रूप में इहाँ अध्ययन आ सामग्री के मंच तैयार किया जा रहा है।</p></div><div class="card"><h3>व्याकरण</h3><p>संज्ञा, सर्वनाम, विशेषण, क्रिया, काल, वचन, लिंग, पुरुष, कारक, उपसर्ग, प्रत्यय, वाक्य संरचना आ शब्द निर्माण जइसन विषय इहाँ जोड़े जा सकते हैं।</p></div><div class="card"><h3>शब्द आ लोकभाषा</h3><p>सामान्य शब्द, समानार्थी, विलोम, मुहावरा, लोकोक्ति, पहेली आ बुझौवल के सामग्री भविष्य में इहाँ प्रकाशित की जा सकेगी।</p></div></div></div></section>
-<section class="section tab-section" id="education"><div class="container"><div class="title"><h2 data-content-key="education_title">🎓 शिक्षा</h2></div><div class="grid"><div class="card"><h3>अध्ययन सामग्री</h3><p>कुड़माली भाषा, साहित्य, व्याकरण, लोक-साहित्य आ झारखंडी समाज से जुड़ल अध्ययन सामग्री के व्यवस्थित रूप से प्रकाशित किया जा सकेगा।</p></div><div class="card"><h3>परीक्षा तैयारी</h3><p>JPSC/JSSC से संबंधित कुड़माली अध्ययन, नोट्स, प्रश्न-अभ्यास आ विषयवार सामग्री के लिए यह जगह उपयोगी रहेगी।</p></div><div class="card"><h3>शोध आ अकादमिक काम</h3><p>शिक्षक, प्रोफेसर, शोधकर्ता आ विद्यार्थियों के लिए भाषा-साहित्य से संबंधित सामग्री और संदर्भ यहाँ जोड़े जा सकते हैं।</p></div></div></div></section>
-<section class="section tab-section" id="culture"><div class="container"><div class="title"><h2 data-content-key="culture_title">🥁 संस्कृति</h2></div><div class="grid"><div class="card"><h3>लोकगीत आ नृत्य</h3><p>मांदर, अखरा, करम, टुसू, बिहा, डमकच, ढप आ पांतागीत जैसे लोक-सांस्कृतिक विषयों पर सामग्री यहाँ दिखाई जाएगी।</p></div><div class="card"><h3>पर्व आ परंपरा</h3><p>सरहुल, सोहराय, बंदना तथा गांव-समुदाय के लोक-पर्व, परंपरा और लोकविश्वास से जुड़ी सामग्री का संग्रह बनाया जा सकता है।</p></div><div class="card"><h3>लोककला आ लोकजीवन</h3><p>माटी, खेती-बारी, हाट-बाजार, लोककला, गांव के जीवन और सामुदायिक परंपराओं की झलक इस भाग में मिलेगी।</p></div></div></div></section>
+<section class="section tab-section" id="language"><div class="container"><div class="title"><h2 data-content-key="language_title">📖 कुड़माली भाषा</h2></div><div class="grid"><div class="card"><h3>भाषा परिचय</h3><p>कुड़माली भाषा, हामर लोकजीवन, समाज, गीत, साहित्य आ सांस्कृतिक पहचान से जुड़ल भाषा के रूप में इहाँ अध्ययन आ सामग्री के मंच तैयार किया जा रहा है।</p></div><div class="card"><h3>व्याकरण</h3><p>संज्ञा, सर्वनाम, विशेषण, क्रिया, काल, वचन, लिंग, पुरुष, कारक, उपसर्ग, प्रत्यय, वाक्य संरचना आ शब्द निर्माण जइसन विषय इहाँ जोड़े जा सकते हैं।</p></div><div class="card"><h3>शब्द आ लोकभाषा</h3><p>सामान्य शब्द, समानार्थी, विलोम, मुहावरा, लोकोक्ति, पहेली आ बुझौवल के सामग्री भविष्य में इहाँ प्रकाशित की जा सकेगी।</p></div></div><div id="categoryArticles-language" class="category-published-box"></div></div></section>
+<section class="section tab-section" id="education"><div class="container"><div class="title"><h2 data-content-key="education_title">🎓 शिक्षा</h2></div><div class="grid"><div class="card"><h3>अध्ययन सामग्री</h3><p>कुड़माली भाषा, साहित्य, व्याकरण, लोक-साहित्य आ झारखंडी समाज से जुड़ल अध्ययन सामग्री के व्यवस्थित रूप से प्रकाशित किया जा सकेगा।</p></div><div class="card"><h3>परीक्षा तैयारी</h3><p>JPSC/JSSC से संबंधित कुड़माली अध्ययन, नोट्स, प्रश्न-अभ्यास आ विषयवार सामग्री के लिए यह जगह उपयोगी रहेगी।</p></div><div class="card"><h3>शोध आ अकादमिक काम</h3><p>शिक्षक, प्रोफेसर, शोधकर्ता आ विद्यार्थियों के लिए भाषा-साहित्य से संबंधित सामग्री और संदर्भ यहाँ जोड़े जा सकते हैं।</p></div></div><div id="categoryArticles-education" class="category-published-box"></div></div></section>
+<section class="section tab-section" id="culture"><div class="container"><div class="title"><h2 data-content-key="culture_title">🥁 संस्कृति</h2></div><div class="grid"><div class="card"><h3>लोकगीत आ नृत्य</h3><p>मांदर, अखरा, करम, टुसू, बिहा, डमकच, ढप आ पांतागीत जैसे लोक-सांस्कृतिक विषयों पर सामग्री यहाँ दिखाई जाएगी।</p></div><div class="card"><h3>पर्व आ परंपरा</h3><p>सरहुल, सोहराय, बंदना तथा गांव-समुदाय के लोक-पर्व, परंपरा और लोकविश्वास से जुड़ी सामग्री का संग्रह बनाया जा सकता है।</p></div><div class="card"><h3>लोककला आ लोकजीवन</h3><p>माटी, खेती-बारी, हाट-बाजार, लोककला, गांव के जीवन और सामुदायिक परंपराओं की झलक इस भाग में मिलेगी।</p></div></div><div id="categoryArticles-culture" class="category-published-box"></div></div></section>
+<section class="section tab-section" id="society"><div class="container"><div class="title"><h2>👥 समाज</h2></div><div id="categoryArticles-society" class="category-published-box"></div></div></section>
+<section class="section tab-section" id="folk-literature"><div class="container"><div class="title"><h2>🎶 लोक-साहित्य</h2></div><div id="categoryArticles-folk" class="category-published-box"></div></div></section>
+<section class="section tab-section" id="research"><div class="container"><div class="title"><h2>🔬 शोध</h2></div><div id="categoryArticles-research" class="category-published-box"></div></div></section>
 <section class="section tab-section" id="authors"><div class="container"><div class="title"><h2 data-content-key="authors_title">✍️ रचनाकार</h2></div><div id="authorsList" class="grid"><div class="card"><p class="meta">प्रकाशित रचनाओं के रचनाकार यहाँ दिखाई देंगे।</p></div></div></div></section>
-<section class="section tab-section" id="resources"><div class="container"><div class="title"><h2 data-content-key="resources_title">📚 संसाधन</h2></div><div class="grid"><div class="card"><h3>पुस्तक आ शोध</h3><p>कुड़माली भाषा, साहित्य, संस्कृति और समाज से संबंधित पुस्तक, शोध और संदर्भ सामग्री के लिए स्थान।</p></div><div class="card"><h3>नोट्स आ प्रश्न</h3><p>अध्ययन नोट्स, विषयवार प्रश्नोत्तर और परीक्षा-तैयारी सामग्री भविष्य में यहाँ जोड़ी जा सकती है।</p></div><div class="card"><h3>भविष्य के विषय</h3><p>भाषा, व्याकरण, लोक-साहित्य, लोकगीत, साहित्य और समाज से जुड़े नए विषय लगातार जोड़े जा सकते हैं।</p></div></div></div></section>
+<section class="section tab-section" id="resources"><div class="container"><div class="title"><h2 data-content-key="resources_title">📚 संसाधन</h2></div><div class="grid"><div class="card"><h3>पुस्तक आ शोध</h3><p>कुड़माली भाषा, साहित्य, संस्कृति और समाज से संबंधित पुस्तक, शोध और संदर्भ सामग्री के लिए स्थान।</p></div><div class="card"><h3>नोट्स आ प्रश्न</h3><p>अध्ययन नोट्स, विषयवार प्रश्नोत्तर और परीक्षा-तैयारी सामग्री भविष्य में यहाँ जोड़ी जा सकती है।</p></div><div class="card"><h3>भविष्य के विषय</h3><p>भाषा, व्याकरण, लोक-साहित्य, लोकगीत, साहित्य और समाज से जुड़े नए विषय लगातार जोड़े जा सकते हैं।</p></div></div><div id="categoryArticles-resources" class="category-published-box"></div></div></section>
 
 
 <section class="section fresh-feature" id="freshToday"><div class="container"><div class="title"><h2>✨ आज का धन्धौरा</h2><span class="fresh-kicker" id="freshTodayDate"></span></div><div id="freshFeaturedCard" class="card"></div></div></section>
@@ -1227,9 +1243,9 @@ function autoClassifyArticle(item){
     const matchedSubs=[];
     for(const [sub,words] of Object.entries(rule.subs||{})){
       let ss=0; for(const kw of words||[]){const hit=scoreKeyword(hay,kw); if(hit) ss += hit + (title.includes(normalizeSearchText(kw))?2:0);}
-      if(ss>=2){matchedSubs.push([sub,ss]);score+=Math.min(ss,5);}
+      if(ss>=1){matchedSubs.push([sub,ss]);score+=Math.min(ss,5);}
     }
-    if(score>=3){out.push(parent);matchedSubs.sort((a,b)=>b[1]-a[1]).forEach(([sub])=>out.push(sub));}
+    if(score>=2){out.push(parent);matchedSubs.sort((a,b)=>b[1]-a[1]).forEach(([sub])=>out.push(sub));}
   }
   // Keep an explicitly supplied category/genre as an additional signal, never as the only source.
   for(const c of articleCategories(item?.category)){if(c && !out.includes(c))out.push(c);}
@@ -1270,7 +1286,7 @@ let kdTeamKalamSubcategory='all';
 function renderTeamKalamCategoryTiles(){
   const box=document.getElementById('teamKalamCategoryTiles'); if(!box)return;
   const icons={'कुड़माली भाषा':'📖','शिक्षा':'🎓','संस्कृति':'🥁','लेख / ब्लॉग':'✍️','संसाधन':'📚','समाज':'👥','लोक-साहित्य':'🎶','शोध':'🔬'};
-  box.innerHTML=Object.keys(KD_CATEGORY_TREE).map(cat=>{const subs=KD_CATEGORY_TREE[cat]||[];return `<div class="tile clickable ${kdTeamKalamFilter===cat?'active-category':''}" data-team-category="${esc(cat)}" role="button" tabindex="0"><div class="icon">${icons[cat]||'📂'}</div><span><b>${esc(cat)}</b><br><small>${subs.map(esc).join(' • ')}</small></span></div>`;}).join('');
+  box.innerHTML=Object.keys(KD_CATEGORY_TREE).map(cat=>{const subs=KD_CATEGORY_TREE[cat]||[];const count=(window.kdAllPublishedArticles||[]).filter(x=>x.source==='admin'&&articleHasCategory(x,cat)).length;return `<div class="tile clickable ${kdTeamKalamFilter===cat?'active-category':''}" data-team-category="${esc(cat)}" role="button" tabindex="0"><div class="icon">${icons[cat]||'📂'}</div><span><b>${esc(cat)}</b><br><small>${subs.map(esc).join(' • ')}</small><br><small>📝 ${count} प्रकाशित</small></span></div>`;}).join('');
   box.querySelectorAll('[data-team-category]').forEach(t=>{const go=()=>setTeamKalamFilter(t.dataset.teamCategory,true);t.addEventListener('click',go);t.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});});
 }
 function setTeamKalamFilter(cat,scroll=false){
@@ -1357,6 +1373,29 @@ function articleMatchesCurrentFilter(x){
   if(cats.includes(kdCurrentSubcategory))return true;
   return normalizeSearchText(String(x.title||'')+' '+String(x.content||'')).includes(normalizeSearchText(kdCurrentSubcategory).replace(' / ',' '));
 }
+function renderCategorySectionArticles(cat,boxId){
+  const box=document.getElementById(boxId); if(!box)return;
+  const all=window.kdAllPublishedArticles||[];
+  const data=all.filter(x=>articleHasCategory(x,cat));
+  const subs=KD_CATEGORY_TREE[cat]||[];
+  let html='<h3>📚 इस category की प्रकाशित रचनाएँ</h3>';
+  html+='<div class="category-published-count">'+(data.length?('कुल '+data.length+' संबंधित प्रकाशित सामग्री'):'अभी इस category में कोई प्रकाशित सामग्री नहीं मिली।')+'</div>';
+  if(subs.length){html+='<div class="category-sub-links">'+subs.map(sub=>'<button type="button" data-cat-sub="'+esc(sub)+'">'+esc(sub)+'</button>').join('')+'</div>'}
+  if(!data.length){box.innerHTML=html;box.querySelectorAll('[data-cat-sub]').forEach(b=>b.onclick=()=>{setArticleFilter(cat,true);setTimeout(()=>setArticleSubcategory(b.dataset.catSub,true),50)});return;}
+  html+='<div class="category-published-grid">';
+  data.slice(0,50).forEach(x=>{const id=String(x.id||'');const preview=String(x.content||'').replace(/\s+/g,' ').slice(0,170);html+='<article class="card" data-category-article="'+esc(id)+'"><span class="meta">'+esc(x.category||'रचना')+'</span><h3>'+esc(x.title||'रचना')+'</h3><p>'+esc(preview)+(String(x.content||'').length>170?'…':'')+'</p><p class="meta">रचनाकार: '+esc(x.author_name||'कुड़माली धन्धौरा')+'</p><button type="button" class="btn">'+(x.file_url?'📎 Document देखें':'📖 पूरी रचना पढ़ें')+' →</button></article>'});
+  html+='</div>'; box.innerHTML=html;
+  box.querySelectorAll('[data-category-article]').forEach(el=>el.addEventListener('click',e=>{if(e.target.closest('button')){openRachnaItem(el.dataset.categoryArticle);return;}openRachnaItem(el.dataset.categoryArticle);}));
+  box.querySelectorAll('[data-cat-sub]').forEach(b=>b.onclick=()=>{setArticleFilter(cat,true);setTimeout(()=>setArticleSubcategory(b.dataset.catSub,true),50)});
+}
+function renderAllCategorySectionArticles(){
+  const map={
+    'कुड़माली भाषा':'categoryArticles-language','शिक्षा':'categoryArticles-education','संस्कृति':'categoryArticles-culture',
+    'संसाधन':'categoryArticles-resources','समाज':'categoryArticles-society','लोक-साहित्य':'categoryArticles-folk','शोध':'categoryArticles-research'
+  };
+  Object.entries(map).forEach(([cat,id])=>renderCategorySectionArticles(cat,id));
+}
+
 function renderFilteredArticles(){
   const grid=document.getElementById('publishedArticlesGrid')||document.querySelector('#blog .grid');if(!grid)return;
   const all=window.kdAllPublishedArticles||[],data=all.filter(articleMatchesCurrentFilter),status=document.getElementById('articleFilterStatus');
@@ -1410,7 +1449,7 @@ async function loadArticles(){
     data.sort((a,b)=>new Date(b.created_at||0)-new Date(a.created_at||0));
     window.kdAllPublishedArticles=data;
     renderTeamKalamCategoryTiles(); renderTeamKalamSubcategoryPanel(); renderTeamKalamArticles();
-    renderFilteredArticles();
+    renderFilteredArticles(); renderAllCategorySectionArticles();
   }catch(e){console.error('Articles load error:',e);}
 }
 function loadAuthorsFromArticles(data){
@@ -1468,7 +1507,7 @@ function searchSite(){const q=$('search').value.trim();if(!q)return;renderSearch
 
 document.querySelectorAll('nav a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href').slice(1),target=document.getElementById(id);if(!target)return;e.preventDefault();history.replaceState(null,'','#'+id);target.scrollIntoView({behavior:'smooth',block:'start'});}));
 document.querySelectorAll('#articleCategoryFilter [data-filter-category]').forEach(b=>b.addEventListener('click',()=>setArticleFilter(b.dataset.filterCategory,true)));
-document.querySelectorAll('[data-category-tile]').forEach(t=>{const go=()=>{if(t.dataset.categoryTile==='आपन रचना भेजा'){document.getElementById('submit')?.scrollIntoView({behavior:'smooth',block:'start'});return;}setArticleFilter(t.dataset.categoryTile,true);};t.addEventListener('click',go);t.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});});
+document.querySelectorAll('[data-category-tile]').forEach(t=>{const go=()=>{const cat=t.dataset.categoryTile;if(cat==='आपन रचना भेजा'){document.getElementById('submit')?.scrollIntoView({behavior:'smooth',block:'start'});return;}setArticleFilter(cat,false);renderAllCategorySectionArticles();const ids={'कुड़माली भाषा':'language','शिक्षा':'education','संस्कृति':'culture','लेख / ब्लॉग':'blog','संसाधन':'resources','समाज':'society','लोक-साहित्य':'folk-literature','शोध':'research'};document.getElementById(ids[cat]||'blog')?.scrollIntoView({behavior:'smooth',block:'start'});};t.addEventListener('click',go);t.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});});
 document.querySelectorAll('.admin-stat-btn[data-admin-target]').forEach(btn=>btn.addEventListener('click',()=>{const target=document.getElementById(btn.dataset.adminTarget);if(target)target.scrollIntoView({behavior:'smooth',block:'start'});}));
 
 window.addEventListener('load',async()=>{
