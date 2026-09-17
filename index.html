@@ -17,14 +17,12 @@ a{text-decoration:none;color:inherit}.top{width:100%;background:var(--deep);colo
 header{width:100%;background:#fff;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;gap:25px;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #0001}
 .brand{display:flex;align-items:center;gap:14px}.fire{font-size:48px}.brand h1{margin:0;font-size:32px;color:var(--green)}.brand h1 span{color:var(--orange)}.brand p{margin:0;font-size:14px;font-weight:700}
 .search{display:flex;max-width:360px;width:100%}.search input{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px 0 0 8px}.search button{padding:0 18px;border:0;background:var(--green);color:#fff;border-radius:0 8px 8px 0}
-.search-wrap{position:relative;max-width:520px;width:100%}.search-wrap .search{max-width:none}.search-suggest{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:10050;background:#fff;border:1px solid #dbe6df;border-radius:12px;box-shadow:0 14px 35px #0002;overflow:hidden;display:none}.search-suggest.show{display:block}.search-suggest-item{display:block;width:100%;border:0;background:#fff;text-align:left;padding:11px 13px;cursor:pointer;border-bottom:1px solid #eef2ef;font:inherit;color:var(--ink)}.search-suggest-item:last-child{border-bottom:0}.search-suggest-item:hover,.search-suggest-item:focus{background:#f2f8f4}.search-suggest-item b{color:var(--green)}.search-suggest-item small{display:block;color:#777;margin-top:2px}.search-results{display:none;position:fixed;left:50%;transform:translateX(-50%);top:86px;width:min(920px,94vw);max-height:76vh;overflow:auto;z-index:10040;background:#fffdf7;border:2px solid #c98228;border-radius:18px;box-shadow:0 20px 70px #0004;padding:16px}.search-results.show{display:block}.search-results-head{display:flex;justify-content:space-between;gap:12px;align-items:center;position:sticky;top:-16px;background:#fffdf7;padding:2px 0 12px;z-index:2}.search-results-head h3{margin:0;color:var(--green)}.search-results-close{border:0;background:#eee;border-radius:50%;width:34px;height:34px;font-size:20px;cursor:pointer}.search-result-card{border:1px solid #e4ebe6;border-radius:14px;padding:13px;margin:9px 0;background:#fff}.search-result-card h4{margin:4px 0;color:var(--green);font-size:18px}.search-result-card p{margin:5px 0}.search-result-card .meta{font-size:12px}.search-result-card mark{background:#fff0a8;border-radius:3px;padding:0 2px}.search-empty{padding:20px;text-align:center;color:#666}.search-backdrop{display:none;position:fixed;inset:0;background:#0005;z-index:10030}.search-backdrop.show{display:block}
-@media(max-width:600px){.search-wrap{max-width:none}.search-results{top:76px;max-height:82vh;width:96vw;padding:12px}.search-results-head{top:-12px}.search-suggest{max-height:55vh;overflow:auto}}
 nav{width:100%;background:var(--green);color:#fff;display:flex;justify-content:center;flex-wrap:wrap}nav a{padding:13px 18px;font-weight:700}nav a:hover{background:#0a7448}
 .hero{width:100%;min-width:100%;min-height:540px;color:#fff;display:flex;align-items:center;padding:60px 6%;background:linear-gradient(90deg,#062b20e8,#062b2055),radial-gradient(circle at 72% 65%,#f39a28 0 5%,#7b3e18 6%,transparent 15%),linear-gradient(135deg,#173e34,#0a201c 55%,#26160e);position:relative;overflow:hidden}
 .hero:after{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:#ff9d2e;filter:blur(55px);opacity:.35;right:18%;bottom:5%}
 .hero-content{max-width:700px;position:relative;z-index:2}.hero h2{font-size:clamp(42px,7vw,78px);margin:0;color:#fff}.hero h2 span{color:var(--gold)}.hero .tag{font-size:23px;font-weight:800;margin:10px 0}.hero .desc{font-size:19px;max-width:650px}.btn{display:inline-block;background:var(--orange);color:#fff;padding:13px 22px;border-radius:30px;font-weight:800;border:0;cursor:pointer}.btn:hover{filter:brightness(1.08)}
 .container{width:min(1180px,92%);margin:auto}.section{padding:55px 0;scroll-margin-top:95px}.title{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}.title h2{margin:0;font-size:32px;color:var(--green)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.cards{display:grid;grid-template-columns:repeat(6,1fr);gap:15px}.card,.tile{background:#fff;border-radius:16px;padding:22px;box-shadow:0 5px 20px #174a3212;border:1px solid #e8eee9}.tile{text-align:center;background:var(--cream);font-weight:800}.tile .icon{font-size:35px}.tile.clickable{cursor:pointer;transition:transform .18s,box-shadow .18s}.tile.clickable:hover,.tile.clickable:focus{transform:translateY(-3px);box-shadow:0 10px 28px #174a3230;outline:2px solid #2d8a61;outline-offset:2px}.tile.active-category{outline:3px solid #f28c28;outline-offset:2px}.category-filter{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}.category-filter button{border:1px solid #cbd9d0;background:#fff;padding:9px 13px;border-radius:999px;font:inherit;cursor:pointer;color:#24523f}.category-filter button.active{background:#176b4b;color:#fff;border-color:#176b4b}.subcategory-panel{margin:-4px 0 18px;padding:12px 14px;background:#f7faf8;border:1px solid #d9e6de;border-radius:14px}.subcategory-title{font-weight:800;color:#24523f;margin-bottom:8px}.subcategory-filter{display:flex;gap:7px;flex-wrap:wrap}.subcategory-filter button{border:1px solid #cbd9d0;background:#fff;padding:7px 11px;border-radius:999px;font:inherit;cursor:pointer;color:#24523f}.subcategory-filter button.active{background:#f28c28;color:#fff;border-color:#f28c28}.article-category-tags{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.article-category-tag{display:inline-block;background:#edf6f0;border:1px solid #c9dfd2;color:#24523f;border-radius:999px;padding:4px 9px;font-size:12px}.multi-category-box{display:flex;gap:8px;flex-wrap:wrap;padding:10px;border:1px solid #d9e2dc;border-radius:9px;background:#fafcfb}.multi-category-box label{display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid #dfe9e3;border-radius:999px;padding:7px 10px;cursor:pointer}.multi-category-box input{width:auto!important;padding:0!important}.card h3{margin:8px 0;color:var(--green)}.meta{font-size:13px;color:#777}.submit{background:linear-gradient(135deg,#fff3d2,#fff);border:2px solid #f4d58d}.quote{background:var(--green);color:#fff;border-radius:18px;padding:35px;text-align:center;font-size:24px;font-weight:800;margin-top:30px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.cards{display:grid;grid-template-columns:repeat(6,1fr);gap:15px}.card,.tile{background:#fff;border-radius:16px;padding:22px;box-shadow:0 5px 20px #174a3212;border:1px solid #e8eee9}.tile{text-align:center;background:var(--cream);font-weight:800}.tile .icon{font-size:35px}.card h3{margin:8px 0;color:var(--green)}.meta{font-size:13px;color:#777}.submit{background:linear-gradient(135deg,#fff3d2,#fff);border:2px solid #f4d58d}.quote{background:var(--green);color:#fff;border-radius:18px;padding:35px;text-align:center;font-size:24px;font-weight:800;margin-top:30px}
 .formbox{background:#fff;border-radius:18px;padding:28px;box-shadow:0 8px 25px #0001}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.formbox input,.formbox select,.formbox textarea{width:100%;padding:13px;border:1px solid #d9e2dc;border-radius:9px;font:inherit}.formbox textarea{min-height:140px;resize:vertical}.full{grid-column:1/-1}
 
 body.admin-mode > *:not(#admin){display:none !important;}
@@ -44,9 +42,6 @@ body.admin-mode #admin{display:block !important;min-height:100vh;padding:30px 0;
 footer{width:100%;background:var(--deep);color:#fff;padding:45px 5% 20px;margin-top:30px}.footergrid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:30px}.footergrid h3{color:var(--gold)}.copy{border-top:1px solid #ffffff33;margin-top:30px;padding-top:15px;display:flex;justify-content:space-between}
 @media(max-width:900px){header{flex-wrap:wrap}.search{order:3;max-width:none}.cards{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:1fr}.footergrid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.top{font-size:11px}.brand h1{font-size:25px}.fire{font-size:38px}nav a{padding:9px 10px;font-size:13px}.hero{width:100%;min-width:100%;min-height:500px;padding:45px 5%}.hero .tag{font-size:18px}.hero .desc{font-size:16px}.cards{grid-template-columns:repeat(2,1fr)}.formgrid{grid-template-columns:1fr}.copy{display:block}}
-.kd-editor-group{grid-column:1/-1;margin:14px 0 4px;color:var(--green);font-weight:900;font-size:15px;border-bottom:1px solid #e6eee9;padding-bottom:6px}
-.kd-image-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.kd-image-row img{width:90px;height:58px;object-fit:cover;border-radius:8px;border:1px solid #d9e2dc}.kd-image-badge{font-size:12px;background:#fff3d2;border-radius:14px;padding:4px 8px;color:#6a4718;font-weight:800}
-
 
 .full-width-fix{width:100%;max-width:none}
 img,video,iframe{max-width:100%;height:auto}
@@ -82,26 +77,6 @@ nav{background:rgba(7,91,56,.94);backdrop-filter:blur(10px);}
 @keyframes kdBgFloat{0%{transform:scale(1.035) translate3d(0,0,0)}100%{transform:scale(1.10) translate3d(-1%, -1%, 0)}}
 @media(max-width:600px){.kd-bg-badge{left:10px;bottom:10px;font-size:11px;padding:7px 10px}}
 
-
-/* AI Tools floating menu */
-.ai-tools-float{position:fixed;right:16px;bottom:82px;z-index:9990;font-family:inherit}.ai-tools-main{width:52px;height:52px;border:0;border-radius:50%;background:#1f6f5b;color:#fff;font-size:25px;box-shadow:0 5px 18px rgba(0,0,0,.22);cursor:pointer}.ai-tools-menu{display:none;position:absolute;right:0;bottom:62px;width:230px;background:#fff;border:1px solid #d9e2dc;border-radius:16px;padding:10px;box-shadow:0 10px 30px rgba(0,0,0,.2)}.ai-tools-menu.show{display:block}.ai-tools-menu h4{margin:4px 6px 8px;font-size:15px;color:#24453a}.ai-tool-link{display:flex;align-items:center;gap:9px;width:100%;padding:9px 10px;border:0;background:transparent;border-radius:10px;text-align:left;font:inherit;cursor:pointer;color:#222}.ai-tool-link:hover{background:#f1f6f3}.ai-tool-link .ai-ico{font-size:21px;width:25px;text-align:center}.ai-tools-note{font-size:11px;color:#6b746f;padding:6px 7px 2px;line-height:1.4}@media(max-width:600px){.ai-tools-float{right:12px;bottom:72px}.ai-tools-main{width:48px;height:48px}.ai-tools-menu{width:215px}}
-
-/* ===== Fresh Visit Experience ===== */
-.fresh-visit-banner{margin:14px auto 0;max-width:1100px;padding:10px 14px;border-radius:14px;background:rgba(255,248,235,.92);border:1px solid rgba(180,120,45,.22);font-size:13px;line-height:1.5;text-align:center}
-.fresh-feature{margin:18px auto;max-width:1100px}.fresh-feature .card{cursor:pointer;transition:transform .2s ease,box-shadow .2s ease}.fresh-feature .card:hover{transform:translateY(-2px)}.fresh-kicker{font-size:12px;font-weight:700;letter-spacing:.03em;opacity:.75}.fresh-recommendations{margin-top:18px}.fresh-recommendations .grid{margin-top:10px}.fresh-chip{display:inline-block;margin:3px 4px 3px 0;padding:4px 9px;border-radius:999px;background:#f4ead8;font-size:11px}@media(max-width:700px){.fresh-visit-banner{margin:10px 12px}.fresh-feature{margin:12px}.fresh-recommendations{margin-top:12px}}
-
-/* ===== Category article navigation fix ===== */
-.category-published-box{margin-top:22px;padding-top:18px;border-top:1px solid rgba(45,90,70,.14)}
-.category-published-box h3{margin:0 0 6px}
-.category-published-count{font-size:13px;opacity:.75;margin-bottom:12px}
-.category-published-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.category-published-grid .card{cursor:pointer}
-.category-sub-links{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 4px}
-.category-sub-links button{border:1px solid #cbdccf;background:#f7faf8;border-radius:999px;padding:7px 11px;cursor:pointer;font:inherit;color:#214d39}
-.category-sub-links button:hover,.category-sub-links button.active{background:#e8f3ec}
-@media(max-width:800px){.category-published-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.category-published-grid{grid-template-columns:1fr}}
-
 </style>
 <style>
 #rachnaReaderModal{position:fixed;inset:0;z-index:100000;display:none;align-items:center;justify-content:center;padding:14px;background:rgba(20,18,12,.68);backdrop-filter:blur(5px)}
@@ -127,17 +102,8 @@ nav{background:rgba(7,91,56,.94);backdrop-filter:blur(10px);}
 
 <header>
   <a class="brand" href="#home"><div class="fire">🔥</div><div><h1>कुड़माली <span>धन्धौरा</span></h1><p id="brandTagline" data-content-key="brand_tagline">राढ़ माटिक माई भाषा कुड़माली<br>एहे हामर पहचान, एहे हामर बोली</p></div></a>
-  <div class="search-wrap">
-    <div class="search"><input id="search" data-content-key="search_placeholder" placeholder="कुछ खोजें..." autocomplete="off" aria-label="वेबसाइट में खोजें"><button type="button" onclick="searchSite()" aria-label="खोजें">🔍</button></div>
-    <div id="searchSuggestions" class="search-suggest" role="listbox"></div>
-  </div>
+  <div class="search"><input id="search" data-content-key="search_placeholder" placeholder="कुछ खोजें..."><button onclick="searchSite()">🔍</button></div>
 </header>
-
-<div id="searchBackdrop" class="search-backdrop" onclick="closeSearchResults()"></div>
-<div id="searchResults" class="search-results" role="dialog" aria-modal="true" aria-labelledby="searchResultsTitle">
-  <div class="search-results-head"><h3 id="searchResultsTitle">🔎 खोज परिणाम</h3><button class="search-results-close" type="button" onclick="closeSearchResults()" aria-label="बंद करें">×</button></div>
-  <div id="searchResultsBody"></div>
-</div>
 
 <nav>
 <a href="#home">⌂ होम</a><a href="#about">हामर बारे में</a><a href="#language">कुड़माली भाषा</a><a href="#education">शिक्षा</a><a href="#culture">संस्कृति</a><a href="#blog">लेख / ब्लॉग</a><a href="#authors">रचनाकार</a><a href="#submit">आपन लेखा भेजा</a><a href="#resources">संसाधन</a><a href="#academic-community">🎓 Academic Community</a>
@@ -153,42 +119,24 @@ nav{background:rgba(7,91,56,.94);backdrop-filter:blur(10px);}
 
 <section class="section"><div class="container">
 <div class="cards">
-<div class="tile clickable" id="languageTile" data-category-tile="कुड़माली भाषा" role="button" tabindex="0"><div class="icon">📖</div><span data-content-key="language_card">कुड़माली भाषा<br><small>शब्द • व्याकरण • साहित्य</small></span></div>
-<div class="tile clickable" id="educationTile" data-category-tile="शिक्षा" role="button" tabindex="0"><div class="icon">🎓</div><span data-content-key="education_card">शिक्षा<br><small>ज्ञान से मजबूत समाज</small></span></div>
-<div class="tile clickable" id="cultureTile" data-category-tile="संस्कृति" role="button" tabindex="0"><div class="icon">🥁</div><span data-content-key="culture_card">संस्कृति<br><small>परंपरा • लोकगीत</small></span></div>
-<div class="tile clickable" id="blogTile" data-category-tile="लेख / ब्लॉग" role="button" tabindex="0"><div class="icon">✍️</div><span data-content-key="blog_card">लेख / ब्लॉग<br><small>विचार • अनुभव</small></span></div>
-<div class="tile clickable" id="resourcesTile" data-category-tile="संसाधन" role="button" tabindex="0"><div class="icon">📚</div><span data-content-key="resources_card">संसाधन<br><small>पुस्तक • शोध</small></span></div>
-<div class="tile clickable" id="submitTile" data-category-tile="आपन रचना भेजा" role="button" tabindex="0"><div class="icon">📤</div><span data-content-key="submit_card">आपन लेखा भेजा<br><small>आपन रचना साझा करा</small></span></div>
+<div class="tile" id="languageTile"><div class="icon">📖</div><span data-content-key="language_card">कुड़माली भाषा<br><small>शब्द • व्याकरण • साहित्य</small></span></div>
+<div class="tile" id="educationTile"><div class="icon">🎓</div><span data-content-key="education_card">शिक्षा<br><small>ज्ञान से मजबूत समाज</small></span></div>
+<div class="tile" id="cultureTile"><div class="icon">🥁</div><span data-content-key="culture_card">संस्कृति<br><small>परंपरा • लोकगीत</small></span></div>
+<div class="tile"><div class="icon">✍️</div><span data-content-key="blog_card">लेख / ब्लॉग<br><small>विचार • अनुभव</small></span></div>
+<div class="tile" id="resourcesTile"><div class="icon">📚</div><span data-content-key="resources_card">संसाधन<br><small>पुस्तक • शोध</small></span></div>
+<div class="tile"><div class="icon">📤</div><span data-content-key="submit_card">आपन लेखा भेजा<br><small>आपन रचना साझा करा</small></span></div>
 </div>
 </div></section>
 
-<section class="section" id="team-kalam">
-<div class="container">
-<div class="title"><h2>🖋️ टीम धन्धौरा की कलम से</h2><span class="meta">टीम धन्धौरा द्वारा प्रकाशित सामग्री</span></div>
-<p class="meta" style="margin-top:-12px;margin-bottom:18px">यहाँ टीम धन्धौरा द्वारा प्रकाशित लेख/रचनाएँ विषय के अनुसार अलग-अलग श्रेणियों में दिखाई जाएँगी। एक ही रचना एक से अधिक श्रेणी और उप-श्रेणी में हो सकती है।</p>
-<div id="teamKalamCategoryTiles" class="cards"></div>
-<div id="teamKalamSubcategoryPanel" class="subcategory-panel" style="display:none"></div>
-<div id="teamKalamFilterStatus" class="meta" style="margin:10px 0 14px"></div>
-<div class="grid" id="teamKalamArticlesGrid"></div>
-</div></section>
-
-<section class="section tab-section" id="language"><div class="container"><div class="title"><h2 data-content-key="language_title">📖 कुड़माली भाषा</h2></div><div class="grid"><div class="card"><h3>भाषा परिचय</h3><p>कुड़माली भाषा, हामर लोकजीवन, समाज, गीत, साहित्य आ सांस्कृतिक पहचान से जुड़ल भाषा के रूप में इहाँ अध्ययन आ सामग्री के मंच तैयार किया जा रहा है।</p></div><div class="card"><h3>व्याकरण</h3><p>संज्ञा, सर्वनाम, विशेषण, क्रिया, काल, वचन, लिंग, पुरुष, कारक, उपसर्ग, प्रत्यय, वाक्य संरचना आ शब्द निर्माण जइसन विषय इहाँ जोड़े जा सकते हैं।</p></div><div class="card"><h3>शब्द आ लोकभाषा</h3><p>सामान्य शब्द, समानार्थी, विलोम, मुहावरा, लोकोक्ति, पहेली आ बुझौवल के सामग्री भविष्य में इहाँ प्रकाशित की जा सकेगी।</p></div></div><div id="categoryArticles-language" class="category-published-box"></div></div></section>
-<section class="section tab-section" id="education"><div class="container"><div class="title"><h2 data-content-key="education_title">🎓 शिक्षा</h2></div><div class="grid"><div class="card"><h3>अध्ययन सामग्री</h3><p>कुड़माली भाषा, साहित्य, व्याकरण, लोक-साहित्य आ झारखंडी समाज से जुड़ल अध्ययन सामग्री के व्यवस्थित रूप से प्रकाशित किया जा सकेगा।</p></div><div class="card"><h3>परीक्षा तैयारी</h3><p>JPSC/JSSC से संबंधित कुड़माली अध्ययन, नोट्स, प्रश्न-अभ्यास आ विषयवार सामग्री के लिए यह जगह उपयोगी रहेगी।</p></div><div class="card"><h3>शोध आ अकादमिक काम</h3><p>शिक्षक, प्रोफेसर, शोधकर्ता आ विद्यार्थियों के लिए भाषा-साहित्य से संबंधित सामग्री और संदर्भ यहाँ जोड़े जा सकते हैं।</p></div></div><div id="categoryArticles-education" class="category-published-box"></div></div></section>
-<section class="section tab-section" id="culture"><div class="container"><div class="title"><h2 data-content-key="culture_title">🥁 संस्कृति</h2></div><div class="grid"><div class="card"><h3>लोकगीत आ नृत्य</h3><p>मांदर, अखरा, करम, टुसू, बिहा, डमकच, ढप आ पांतागीत जैसे लोक-सांस्कृतिक विषयों पर सामग्री यहाँ दिखाई जाएगी।</p></div><div class="card"><h3>पर्व आ परंपरा</h3><p>सरहुल, सोहराय, बंदना तथा गांव-समुदाय के लोक-पर्व, परंपरा और लोकविश्वास से जुड़ी सामग्री का संग्रह बनाया जा सकता है।</p></div><div class="card"><h3>लोककला आ लोकजीवन</h3><p>माटी, खेती-बारी, हाट-बाजार, लोककला, गांव के जीवन और सामुदायिक परंपराओं की झलक इस भाग में मिलेगी।</p></div></div><div id="categoryArticles-culture" class="category-published-box"></div></div></section>
-<section class="section tab-section" id="society"><div class="container"><div class="title"><h2>👥 समाज</h2></div><div id="categoryArticles-society" class="category-published-box"></div></div></section>
-<section class="section tab-section" id="folk-literature"><div class="container"><div class="title"><h2>🎶 लोक-साहित्य</h2></div><div id="categoryArticles-folk" class="category-published-box"></div></div></section>
-<section class="section tab-section" id="research"><div class="container"><div class="title"><h2>🔬 शोध</h2></div><div id="categoryArticles-research" class="category-published-box"></div></div></section>
+<section class="section tab-section" id="language"><div class="container"><div class="title"><h2 data-content-key="language_title">📖 कुड़माली भाषा</h2></div><div class="grid"><div class="card"><h3>भाषा परिचय</h3><p>कुड़माली भाषा, हामर लोकजीवन, समाज, गीत, साहित्य आ सांस्कृतिक पहचान से जुड़ल भाषा के रूप में इहाँ अध्ययन आ सामग्री के मंच तैयार किया जा रहा है।</p></div><div class="card"><h3>व्याकरण</h3><p>संज्ञा, सर्वनाम, विशेषण, क्रिया, काल, वचन, लिंग, पुरुष, कारक, उपसर्ग, प्रत्यय, वाक्य संरचना आ शब्द निर्माण जइसन विषय इहाँ जोड़े जा सकते हैं।</p></div><div class="card"><h3>शब्द आ लोकभाषा</h3><p>सामान्य शब्द, समानार्थी, विलोम, मुहावरा, लोकोक्ति, पहेली आ बुझौवल के सामग्री भविष्य में इहाँ प्रकाशित की जा सकेगी।</p></div></div></div></section>
+<section class="section tab-section" id="education"><div class="container"><div class="title"><h2 data-content-key="education_title">🎓 शिक्षा</h2></div><div class="grid"><div class="card"><h3>अध्ययन सामग्री</h3><p>कुड़माली भाषा, साहित्य, व्याकरण, लोक-साहित्य आ झारखंडी समाज से जुड़ल अध्ययन सामग्री के व्यवस्थित रूप से प्रकाशित किया जा सकेगा।</p></div><div class="card"><h3>परीक्षा तैयारी</h3><p>JPSC/JSSC से संबंधित कुड़माली अध्ययन, नोट्स, प्रश्न-अभ्यास आ विषयवार सामग्री के लिए यह जगह उपयोगी रहेगी।</p></div><div class="card"><h3>शोध आ अकादमिक काम</h3><p>शिक्षक, प्रोफेसर, शोधकर्ता आ विद्यार्थियों के लिए भाषा-साहित्य से संबंधित सामग्री और संदर्भ यहाँ जोड़े जा सकते हैं।</p></div></div></div></section>
+<section class="section tab-section" id="culture"><div class="container"><div class="title"><h2 data-content-key="culture_title">🥁 संस्कृति</h2></div><div class="grid"><div class="card"><h3>लोकगीत आ नृत्य</h3><p>मांदर, अखरा, करम, टुसू, बिहा, डमकच, ढप आ पांतागीत जैसे लोक-सांस्कृतिक विषयों पर सामग्री यहाँ दिखाई जाएगी।</p></div><div class="card"><h3>पर्व आ परंपरा</h3><p>सरहुल, सोहराय, बंदना तथा गांव-समुदाय के लोक-पर्व, परंपरा और लोकविश्वास से जुड़ी सामग्री का संग्रह बनाया जा सकता है।</p></div><div class="card"><h3>लोककला आ लोकजीवन</h3><p>माटी, खेती-बारी, हाट-बाजार, लोककला, गांव के जीवन और सामुदायिक परंपराओं की झलक इस भाग में मिलेगी।</p></div></div></div></section>
 <section class="section tab-section" id="authors"><div class="container"><div class="title"><h2 data-content-key="authors_title">✍️ रचनाकार</h2></div><div id="authorsList" class="grid"><div class="card"><p class="meta">प्रकाशित रचनाओं के रचनाकार यहाँ दिखाई देंगे।</p></div></div></div></section>
-<section class="section tab-section" id="resources"><div class="container"><div class="title"><h2 data-content-key="resources_title">📚 संसाधन</h2></div><div class="grid"><div class="card"><h3>पुस्तक आ शोध</h3><p>कुड़माली भाषा, साहित्य, संस्कृति और समाज से संबंधित पुस्तक, शोध और संदर्भ सामग्री के लिए स्थान।</p></div><div class="card"><h3>नोट्स आ प्रश्न</h3><p>अध्ययन नोट्स, विषयवार प्रश्नोत्तर और परीक्षा-तैयारी सामग्री भविष्य में यहाँ जोड़ी जा सकती है।</p></div><div class="card"><h3>भविष्य के विषय</h3><p>भाषा, व्याकरण, लोक-साहित्य, लोकगीत, साहित्य और समाज से जुड़े नए विषय लगातार जोड़े जा सकते हैं।</p></div></div><div id="categoryArticles-resources" class="category-published-box"></div></div></section>
-
-
-<section class="section fresh-feature" id="freshToday"><div class="container"><div class="title"><h2>✨ आज का धन्धौरा</h2><span class="fresh-kicker" id="freshTodayDate"></span></div><div id="freshFeaturedCard" class="card"></div></div></section>
-<section class="section fresh-recommendations" id="freshRecommendations"><div class="container"><div class="title"><h2>📚 आपके लिए आज की चुनिंदा रचनाएँ</h2><span class="fresh-kicker">हर visit पर चयन बदल सकता है</span></div><div id="freshRecommendationGrid" class="grid"></div></div></section>
+<section class="section tab-section" id="resources"><div class="container"><div class="title"><h2 data-content-key="resources_title">📚 संसाधन</h2></div><div class="grid"><div class="card"><h3>पुस्तक आ शोध</h3><p>कुड़माली भाषा, साहित्य, संस्कृति और समाज से संबंधित पुस्तक, शोध और संदर्भ सामग्री के लिए स्थान।</p></div><div class="card"><h3>नोट्स आ प्रश्न</h3><p>अध्ययन नोट्स, विषयवार प्रश्नोत्तर और परीक्षा-तैयारी सामग्री भविष्य में यहाँ जोड़ी जा सकती है।</p></div><div class="card"><h3>भविष्य के विषय</h3><p>भाषा, व्याकरण, लोक-साहित्य, लोकगीत, साहित्य और समाज से जुड़े नए विषय लगातार जोड़े जा सकते हैं।</p></div></div></div></section>
 
 <section class="section" id="blog"><div class="container">
 <div class="title"><h2 data-content-key="blog_title">🌿 ताजा लेख</h2><span data-content-key="blog_more">सब देखें →</span></div>
-<div class="category-filter" id="articleCategoryFilter" aria-label="लेख की विषय श्रेणियाँ"><button type="button" data-filter-category="all" class="active">📚 सभी लेख</button><button type="button" data-filter-category="कुड़माली भाषा">📖 कुड़माली भाषा</button><button type="button" data-filter-category="शिक्षा">🎓 शिक्षा</button><button type="button" data-filter-category="संस्कृति">🥁 संस्कृति</button><button type="button" data-filter-category="लेख / ब्लॉग">✍️ लेख / ब्लॉग</button><button type="button" data-filter-category="संसाधन">📚 संसाधन</button><button type="button" data-filter-category="समाज">👥 समाज</button><button type="button" data-filter-category="लोक-साहित्य">🎶 लोक-साहित्य</button><button type="button" data-filter-category="शोध">🔬 शोध</button></div><div id="articleSubcategoryPanel" class="subcategory-panel" style="display:none"></div><div id="articleFilterStatus" class="meta" style="margin:-8px 0 14px"></div>
-<div class="grid" id="publishedArticlesGrid">
+<div class="grid">
 <article class="card"><div style="font-size:42px">🌱</div><span class="meta">विचार • 12 अप्रैल 2026</span><h3>भाषा से बनथे समाज के मजबूत नींव</h3><p>अपन भाषा, संस्कृति आ चेतना से समाज के विकास के रास्ता मजबूत होवऽ हे...</p></article>
 <article class="card"><div style="font-size:42px">📜</div><span class="meta">भाषा • 08 अप्रैल 2026</span><h3>कुड़माली भाषा : इतिहास आ वर्तमान</h3><p>कुड़माली भाषा के समृद्ध परंपरा आ वर्तमान स्थिति पर एक नजर...</p></article>
 <article class="card"><div style="font-size:42px">🌾</div><span class="meta">समाज • 05 अप्रैल 2026</span><h3>हामर गांव, हामर ताकत</h3><p>माटी, लोग आ लोकपरंपरा — हामर पहचान के जड़ से जुड़ल कहानी...</p></article>
@@ -219,7 +167,6 @@ nav{background:rgba(7,91,56,.94);backdrop-filter:blur(10px);}
 <option value="">अपनी रचना की सही विधा चुनें *</option>
 <option>कहानी</option><option>कविता</option><option>उपन्यास</option><option>पुस्तक</option><option>व्यंग्य लेख</option><option>लेख</option><option>ब्लॉग</option><option>नाटक</option><option>गीत</option><option>ग़ज़ल</option><option>निबंध</option><option>संस्मरण</option><option>आत्मकथा</option><option>यात्रा-वृत्तांत</option><option>समीक्षा</option><option>शोध</option><option>लोक-साहित्य</option><option>बाल साहित्य</option><option>अनुवाद</option><option>अन्य</option>
 </select>
-<div class="full"><label><b>विषय श्रेणी / उप-श्रेणी — एक से अधिक चुन सकते हैं</b></label><p class="meta">एक रचना को एक से अधिक मुख्य श्रेणी और उप-श्रेणी में रखा जा सकता है।</p><div class="multi-category-box" id="submissionTopicCategories"><div style="width:100%;margin-top:8px"><b>कुड़माली भाषा</b></div><label><input type="checkbox" value="कुड़माली भाषा">कुड़माली भाषा</label><label><input type="checkbox" value="शब्द">शब्द</label><label><input type="checkbox" value="व्याकरण">व्याकरण</label><label><input type="checkbox" value="साहित्य">साहित्य</label><label><input type="checkbox" value="लोकभाषा">लोकभाषा</label><div style="width:100%;margin-top:8px"><b>शिक्षा</b></div><label><input type="checkbox" value="शिक्षा">शिक्षा</label><label><input type="checkbox" value="अध्ययन सामग्री">अध्ययन सामग्री</label><label><input type="checkbox" value="परीक्षा तैयारी">परीक्षा तैयारी</label><label><input type="checkbox" value="शोध / अकादमिक">शोध / अकादमिक</label><div style="width:100%;margin-top:8px"><b>संस्कृति</b></div><label><input type="checkbox" value="संस्कृति">संस्कृति</label><label><input type="checkbox" value="लोकगीत">लोकगीत</label><label><input type="checkbox" value="नृत्य">नृत्य</label><label><input type="checkbox" value="पर्व / परंपरा">पर्व / परंपरा</label><label><input type="checkbox" value="लोककला / लोकजीवन">लोककला / लोकजीवन</label><div style="width:100%;margin-top:8px"><b>लेख / ब्लॉग</b></div><label><input type="checkbox" value="लेख / ब्लॉग">लेख / ब्लॉग</label><label><input type="checkbox" value="विचार">विचार</label><label><input type="checkbox" value="अनुभव">अनुभव</label><label><input type="checkbox" value="ब्लॉग">ब्लॉग</label><div style="width:100%;margin-top:8px"><b>संसाधन</b></div><label><input type="checkbox" value="संसाधन">संसाधन</label><label><input type="checkbox" value="पुस्तक">पुस्तक</label><label><input type="checkbox" value="नोट्स / प्रश्न">नोट्स / प्रश्न</label><label><input type="checkbox" value="संदर्भ">संदर्भ</label><div style="width:100%;margin-top:8px"><b>समाज</b></div><label><input type="checkbox" value="समाज">समाज</label><label><input type="checkbox" value="गांव / सामुदायिक जीवन">गांव / सामुदायिक जीवन</label><label><input type="checkbox" value="लोकजीवन">लोकजीवन</label><div style="width:100%;margin-top:8px"><b>लोक-साहित्य</b></div><label><input type="checkbox" value="लोक-साहित्य">लोक-साहित्य</label><label><input type="checkbox" value="लोककथा">लोककथा</label><label><input type="checkbox" value="लोकगीत">लोकगीत</label><label><input type="checkbox" value="लोकनृत्य">लोकनृत्य</label><div style="width:100%;margin-top:8px"><b>शोध</b></div><label><input type="checkbox" value="शोध">शोध</label><label><input type="checkbox" value="शोध-पत्र">शोध-पत्र</label><label><input type="checkbox" value="अकादमिक">अकादमिक</label><label><input type="checkbox" value="संदर्भ">संदर्भ</label></div></div>
 <div class="full"><label><b>रचना भेजने का तरीका *</b></label><select id="subMethod" required disabled><option value="typing">✍️ सीधे वेबसाइट पर टाइप करें</option><option value="file">📎 PDF / Word / अन्य फ़ाइल अपलोड करें</option></select></div>
 <textarea id="subContent" class="full" placeholder="पहले अस्वीकरण स्वीकार करें।" disabled></textarea>
 <div id="subFileWrap" class="full" style="display:none"><label><b>रचना की फ़ाइल *</b></label><input id="subFile" disabled type="file" accept=".pdf,.doc,.docx,.txt,.rtf,.odt,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain,text/rtf,application/vnd.oasis.opendocument.text"><div class="meta">PDF, Word, TXT, RTF, ODT या अन्य document फ़ाइल भेज सकते हैं।</div></div>
@@ -341,35 +288,25 @@ nav{background:rgba(7,91,56,.94);backdrop-filter:blur(10px);}
 <button type="button" class="admin-stat admin-stat-btn" data-admin-target="visitorDetails"><span class="big" id="statUniqueToday">0</span>🧑 आज के Unique Visitors</button>
 </div>
 <div class="formbox" style="margin-bottom:20px"><h3>🧭 Website Edit Map</h3><p class="meta">जिस हिस्से को बदलना है, उसे चुनें। फिर नीचे editor में text बदलकर Save करें।</p><div id="adminEditMap" class="admin-actions"></div></div>
-<div class="formbox" style="margin-bottom:20px"><h3>👁️ Visitor Analytics</h3><p class="meta">हर बार webpage खुलने/refresh होने पर 1 Visit गिना जाएगा। उसी browser/device का visitor_id स्थिर रहेगा; नया browser/device नया Unique Visitor माना जाएगा।</p><div class="admin-grid" style="margin-top:12px"><div class="admin-stat"><span class="big" id="statVisitsTotal">0</span>कुल Visits</div><div class="admin-stat"><span class="big" id="statVisits7">0</span>पिछले 7 दिन</div><div class="admin-stat"><span class="big" id="statUniqueTotal">0</span>कुल Unique Visitors</div><div class="admin-stat"><span class="big" id="statPagesToday">0</span>आज देखे गए Pages</div></div><div id="visitorDetails" style="margin-top:12px"></div></div>
+<div class="formbox" style="margin-bottom:20px"><h3>👁️ Visitor Analytics</h3><p class="meta">आज, पिछले 7 दिन और कुल visits का सार तथा हाल के visits यहाँ देखें।</p><div class="admin-grid" style="margin-top:12px"><div class="admin-stat"><span class="big" id="statVisitsTotal">0</span>कुल Visits</div><div class="admin-stat"><span class="big" id="statVisits7">0</span>पिछले 7 दिन</div><div class="admin-stat"><span class="big" id="statUniqueTotal">0</span>कुल Unique Visitors</div><div class="admin-stat"><span class="big" id="statPagesToday">0</span>आज देखे गए Pages</div></div><div id="visitorDetails" style="margin-top:12px"></div></div>
 <div class="formbox" style="margin-bottom:20px">
 <h3>📝 नया Article</h3>
 <div class="formgrid">
 <input id="articleTitle" placeholder="लेख का शीर्षक">
-<input id="articleCategory" placeholder="मुख्य विधा / अतिरिक्त श्रेणी (वैकल्पिक)">
-<div class="full"><label><b>विषय श्रेणियाँ / उप-श्रेणियाँ — एक से अधिक चुन सकते हैं</b></label><p class="meta">एक रचना को एक से अधिक मुख्य श्रेणी और उप-श्रेणी में रखा जा सकता है।</p><div class="multi-category-box" id="articleTopicCategories"><div style="width:100%;margin-top:8px"><b>कुड़माली भाषा</b></div><label><input type="checkbox" value="कुड़माली भाषा">कुड़माली भाषा</label><label><input type="checkbox" value="शब्द">शब्द</label><label><input type="checkbox" value="व्याकरण">व्याकरण</label><label><input type="checkbox" value="साहित्य">साहित्य</label><label><input type="checkbox" value="लोकभाषा">लोकभाषा</label><div style="width:100%;margin-top:8px"><b>शिक्षा</b></div><label><input type="checkbox" value="शिक्षा">शिक्षा</label><label><input type="checkbox" value="अध्ययन सामग्री">अध्ययन सामग्री</label><label><input type="checkbox" value="परीक्षा तैयारी">परीक्षा तैयारी</label><label><input type="checkbox" value="शोध / अकादमिक">शोध / अकादमिक</label><div style="width:100%;margin-top:8px"><b>संस्कृति</b></div><label><input type="checkbox" value="संस्कृति">संस्कृति</label><label><input type="checkbox" value="लोकगीत">लोकगीत</label><label><input type="checkbox" value="नृत्य">नृत्य</label><label><input type="checkbox" value="पर्व / परंपरा">पर्व / परंपरा</label><label><input type="checkbox" value="लोककला / लोकजीवन">लोककला / लोकजीवन</label><div style="width:100%;margin-top:8px"><b>लेख / ब्लॉग</b></div><label><input type="checkbox" value="लेख / ब्लॉग">लेख / ब्लॉग</label><label><input type="checkbox" value="विचार">विचार</label><label><input type="checkbox" value="अनुभव">अनुभव</label><label><input type="checkbox" value="ब्लॉग">ब्लॉग</label><div style="width:100%;margin-top:8px"><b>संसाधन</b></div><label><input type="checkbox" value="संसाधन">संसाधन</label><label><input type="checkbox" value="पुस्तक">पुस्तक</label><label><input type="checkbox" value="नोट्स / प्रश्न">नोट्स / प्रश्न</label><label><input type="checkbox" value="संदर्भ">संदर्भ</label><div style="width:100%;margin-top:8px"><b>समाज</b></div><label><input type="checkbox" value="समाज">समाज</label><label><input type="checkbox" value="गांव / सामुदायिक जीवन">गांव / सामुदायिक जीवन</label><label><input type="checkbox" value="लोकजीवन">लोकजीवन</label><div style="width:100%;margin-top:8px"><b>लोक-साहित्य</b></div><label><input type="checkbox" value="लोक-साहित्य">लोक-साहित्य</label><label><input type="checkbox" value="लोककथा">लोककथा</label><label><input type="checkbox" value="लोकगीत">लोकगीत</label><label><input type="checkbox" value="लोकनृत्य">लोकनृत्य</label><div style="width:100%;margin-top:8px"><b>शोध</b></div><label><input type="checkbox" value="शोध">शोध</label><label><input type="checkbox" value="शोध-पत्र">शोध-पत्र</label><label><input type="checkbox" value="अकादमिक">अकादमिक</label><label><input type="checkbox" value="संदर्भ">संदर्भ</label></div></div>
-<div class="full" style="margin-top:8px;padding:12px;border:1px dashed #c8d8cf;border-radius:12px;background:#f7faf8"><b>🤖 स्वचालित विषय-वर्गीकरण</b><p class="meta" style="margin:6px 0">Publish करते समय सिस्टम शीर्षक, पूरी रचना, विधा और उपलब्ध परिचय के शब्द/थीम का विश्लेषण करके अपने-आप मुख्य श्रेणी और उप-श्रेणियाँ जोड़ेगा। नीचे चुनी हुई categories केवल अतिरिक्त संकेत हैं—वे जरूरी नहीं हैं।</p><div class="formgrid" style="margin-top:8px"><input id="customCategoryName" placeholder="नई मुख्य श्रेणी (वैकल्पिक)"><input id="customCategorySubs" placeholder="उप-श्रेणियाँ, comma से अलग (वैकल्पिक)"><input id="customCategoryKeywords" class="full" placeholder="इस श्रेणी के पहचान-शब्द, comma से अलग (जैसे इतिहास, पुरातत्व, किला)"><div class="full"><button type="button" class="admin-action" onclick="saveCustomCategoryRule()">➕ नई श्रेणी/नियम जोड़ें</button> <button type="button" class="admin-action" onclick="loadCustomCategoryRules(true)">↻ नियम देखें</button><div id="customCategoryRuleStatus" class="meta" style="margin-top:7px"></div></div></div></div>
+<input id="articleCategory" placeholder="श्रेणी">
 <input id="articleAuthor" placeholder="लेखक">
 <textarea id="articleContent" class="full" placeholder="लेख लिखीं..."></textarea>
 <div class="full"><button class="btn" id="publishArticle">📢 Publish</button></div>
 </div></div>
 <div class="formbox" style="margin-bottom:20px"><h3>📰 Published Articles / Rachna</h3><p class="meta">यहाँ प्रकाशित लेख और स्वीकृत रचनाएँ पूरी जानकारी के साथ दिखेंगी।</p><div id="adminArticles"></div></div>
-<div class="formbox" style="margin-bottom:20px"><h3>🛠️ Visual Website Editor — Text + Image</h3>
-<p class="meta">जिस webpage हिस्से को बदलना है, उसे नीचे चुनें। Text, heading, button, description और मुख्य images को Admin Panel से बदलें। Save के बाद बदलाव database से public website पर लागू होगा; Vercel पर redeploy की जरूरत नहीं।</p>
-<div class="notice" style="margin:10px 0;padding:12px;border-left:4px solid #2d8a61;background:#f3fbf6;border-radius:8px">✏️ <b>कैसे इस्तेमाल करें:</b> Page/Section चुनें → Text या Image चुनें → बदलाव करें → Preview देखें → Save करें।</div>
+<div class="formbox" style="margin-bottom:20px"><h3>🛠️ वेबसाइट सामग्री बदलें</h3>
+<p class="meta">यहाँ से webpage पर दिखने वाले editable sentences, headings, buttons और descriptions बदलें। Save करने के बाद नया text database से वेबसाइट पर दिखेगा; Netlify/Cloudflare पर file upload की जरूरत नहीं। नीचे की सूची में page के सभी marked texts अपने-आप दिखेंगे।</p><div class="notice" style="margin:10px 0;padding:12px;border-left:4px solid #2d8a61;background:#f3fbf6;border-radius:8px">✏️ <b>Page Text Editor:</b> किसी भी text को चुनें → वाक्य बदलें → Save करें। नया text तुरंत public page पर लागू होगा।</div>
 <div class="formgrid">
-<select id="contentSelect" class="full"><option value="">📂 Page/Section चुनें…</option></select>
-<select id="contentType"><option value="text">✏️ Text / Heading / Button</option><option value="image">🖼️ Image</option></select>
+<select id="contentSelect" class="full"><option value="">सामग्री चुनें…</option></select>
 <input id="contentTitle" placeholder="सामग्री का नाम">
 <label style="display:flex;align-items:center;gap:8px;padding:10px"><input type="checkbox" id="contentPublished" checked> वेबसाइट पर प्रकाशित रखें</label>
 <textarea id="contentValue" class="full" placeholder="यहाँ नई सामग्री लिखें…"></textarea>
-<div id="contentImageEditor" class="full" style="display:none">
-  <label><b>नई Image चुनें</b></label>
-  <input id="contentImageFile" type="file" accept="image/*">
-  <div class="meta" style="margin-top:6px">JPG, PNG या WebP image चुनें। Upload होने के बाद public website पर यही image दिखाई जाएगी।</div>
-  <div id="contentImagePreviewWrap" style="margin-top:12px;display:none"><div class="meta">Preview:</div><img id="contentImagePreview" alt="Image preview" style="display:block;width:min(700px,100%);max-height:360px;object-fit:cover;border-radius:14px;border:1px solid #d9e2dc;margin-top:6px"></div>
-</div>
-<div class="full"><button class="btn" id="saveContent">💾 Save करें</button> <button class="btn" id="newContent" type="button" style="background:#777">➕ नया Item</button></div>
+<div class="full"><button class="btn" id="saveContent">💾 सामग्री Save करें</button> <button class="btn" id="newContent" type="button" style="background:#777">➕ नई सामग्री</button></div>
 </div><div id="contentStatus" class="meta" style="margin-top:8px"></div></div>
 <div class="formbox" style="margin-bottom:20px"><h3>🌿 Floating Culture Glimpses</h3>
 <p class="meta">हर 10 सेकंड दिखने वाली संस्कृति की झलक भी यहीं से बदलें।</p>
@@ -401,7 +338,6 @@ const SUPABASE_KEY='sb_publishable_BjJrbxw1KLvip-w4BZ9WQg_NiHLn8vs';
 const AUTH_URL=SUPABASE_URL+'/auth/v1';
 const REST_URL=SUPABASE_URL+'/rest/v1';
 let authSession=null,currentUser=null,currentProfile=null,currentConversation=null,currentPeerChatId=null,currentAdminChatId=null,isAdmin=false,pollTimer=null;
-let kdCustomBackgroundImage='',kdCustomHeroImage=''; window.kdCustomBackgroundImage=''; window.kdCustomHeroImage='';
 const $=id=>document.getElementById(id);
 const esc=v=>String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 const userCode=uuid=>'KD'+String(uuid||'').replaceAll('-','').slice(0,6).toUpperCase();
@@ -875,25 +811,9 @@ async function sendChat(){
 }
 async function loadSiteContent(){
   try{
-    // site_content uses section_key in the current database schema.
     const rows=await dbRequest('site_content',{query:'?select=section_key,title,content,is_published&order=id.asc'});
     (rows||[]).forEach(x=>{
       const key=x.section_key||'';
-      if(!key) return;
-      if(key==='site_background_image'){
-        if(x.is_published && x.content){
-          document.documentElement.style.setProperty('--kd-bg-image',`url("${String(x.content).replace(/"/g,'\\"')}")`);
-          window.kdCustomBackgroundImage=x.content;
-        }else{ window.kdCustomBackgroundImage=''; }
-        return;
-      }
-      if(key==='hero_image'){
-        if(x.is_published && x.content){
-          document.documentElement.style.setProperty('--kd-hero-bg',`url("${String(x.content).replace(/"/g,'\\"')}")`);
-          window.kdCustomHeroImage=x.content;
-        }else{ window.kdCustomHeroImage=''; }
-        return;
-      }
       const el=document.querySelector('[data-content-key="'+CSS.escape(key)+'"]');
       if(el){
         el.style.display=x.is_published?'':'none';
@@ -919,48 +839,12 @@ async function loadCultureGlimpses(){
     if(rows?.length) window.kdCultureItems=rows.filter(x=>x.is_published).map(x=>[x.icon,x.title,x.description]);
   }catch(e){console.error('Culture load error:',e);}
 }
-function contentGroupLabel(key){
-  const k=String(key||'');
-  if(k==='hero_image') return '🏠 Home — Hero Image';
-  if(k==='site_background_image') return '🌿 पूरे Website का Background Image';
-  if(k.startsWith('hero_')||k.startsWith('top_')||k==='brand_tagline'||k==='search_placeholder') return '🏠 Home / Header';
-  if(k.startsWith('language_')) return '📖 कुड़माली भाषा';
-  if(k.startsWith('education_')) return '🎓 शिक्षा';
-  if(k.startsWith('culture_')) return '🥁 संस्कृति';
-  if(k.startsWith('authors_')) return '✍️ रचनाकार';
-  if(k.startsWith('resources_')) return '📚 संसाधन';
-  if(k.startsWith('blog_')) return '🌿 लेख / ब्लॉग';
-  if(k.startsWith('submit_')) return '📝 रचना प्रकाशन';
-  if(k.startsWith('academic_')) return '🎓 Academic Community';
-  if(k.startsWith('suggestions_')) return '💡 सुझाव / संदेश';
-  if(k.startsWith('chat_')) return '💬 Admin Chat';
-  if(k.startsWith('email_verify_')) return '📧 Email Verification';
-  if(k.startsWith('about_')) return '🔥 धन्धौरा के बारे में';
-  if(k.startsWith('footer_')) return '🔻 Footer';
-  if(k==='page_title'||k==='meta_description') return '🔎 SEO';
-  return '📂 अन्य';
-}
-
-function editorImageRows(){
-  return [
-    {id:null,section_key:'hero_image',title:'मुख्य Home / Hero Image',content:window.kdCustomHeroImage||'',is_published:!!window.kdCustomHeroImage,_image:true,_virtual:true},
-    {id:null,section_key:'site_background_image',title:'पूरे Website का Background Image',content:window.kdCustomBackgroundImage||'',is_published:!!window.kdCustomBackgroundImage,_image:true,_virtual:true}
-  ];
-}
-
-function renderContentEditorType(type){
-  const image=type==='image';
-  $('contentValue').style.display=image?'none':'';
-  $('contentImageEditor').style.display=image?'block':'none';
-  if(!image){ $('contentImageFile').value=''; $('contentImagePreviewWrap').style.display='none'; }
-}
-
 async function loadAdminContent(){
   if(!isAdmin)return;
   const sel=$('contentSelect'); if(!sel)return;
   let rows=[];
   try{ rows=await dbRequest('site_content',{query:'?select=*&order=id.asc'}); }catch(e){ $('contentStatus').textContent='❌ सामग्री लोड नहीं हुई: '+e.message; return; }
-  rows=(rows||[]).map(x=>({...x,content_key:x.section_key||''}));
+  rows=rows||[];
   const existing=new Set(rows.map(x=>x.content_key).filter(Boolean));
   document.querySelectorAll('[data-content-key]').forEach(el=>{
     const key=el.getAttribute('data-content-key');
@@ -968,75 +852,45 @@ async function loadAdminContent(){
     let value='';
     if(el.tagName==='INPUT' || el.tagName==='TEXTAREA') value=el.placeholder||'';
     else value=el.innerText||el.textContent||'';
-    if(value.trim()) rows.push({id:null,section_key:key,content_key:key,title:key.replace(/_/g,' '),content:value.trim(),is_published:true,_domOnly:true});
+    if(value.trim()) rows.push({id:null,content_key:key,title:key.replace(/_/g,' '),content:value.trim(),is_published:true,_domOnly:true});
   });
+  // Special editable SEO fields
   const meta=document.querySelector('meta[name="description"]');
-  if(meta && !existing.has('meta_description')) rows.push({id:null,section_key:'meta_description',content_key:'meta_description',title:'SEO Meta Description',content:meta.getAttribute('content')||'',is_published:true,_domOnly:true});
-  if(!existing.has('page_title')) rows.push({id:null,section_key:'page_title',content_key:'page_title',title:'Browser Page Title',content:document.title||'',is_published:true,_domOnly:true});
-  rows=[...rows.filter(x=>!['hero_image','site_background_image'].includes(x.content_key)),...editorImageRows()];
-
-  const groups={};
-  rows.forEach(x=>{const g=contentGroupLabel(x.content_key);(groups[g]||(groups[g]=[])).push(x);});
-  sel.innerHTML='<option value="">📂 Page/Section चुनें…</option>'+Object.entries(groups).map(([g,items])=>'<optgroup label="'+esc(g)+'">'+items.map(x=>'<option value="'+esc(x.content_key)+'">'+(x._image?'🖼️ ':'✏️ ')+esc(x.title||x.content_key||'सामग्री')+'</option>').join('')+'</optgroup>').join('');
+  if(meta && !existing.has('meta_description')) rows.push({id:null,content_key:'meta_description',title:'SEO Meta Description',content:meta.getAttribute('content')||'',is_published:true,_domOnly:true});
+  if(!existing.has('page_title')) rows.push({id:null,content_key:'page_title',title:'Browser Page Title',content:document.title||'',is_published:true,_domOnly:true});
+  sel.innerHTML='<option value="">सामग्री चुनें…</option>'+(rows||[]).map(x=>`<option value="${esc(x.content_key)}">${esc(x.title)} (${esc(x.content_key)})</option>`).join('');
   sel._rows=rows||[];
   const map=$('adminEditMap');
   if(map){
-    map.innerHTML=Object.entries(groups).map(([g,items])=>'<div class="kd-editor-group">'+esc(g)+'</div>'+items.map(x=>{const thumb=x._image&&x.content?'<img src="'+esc(x.content)+'" alt="">':'';return '<button class="admin-action kd-image-row" type="button" data-content-key="'+esc(x.content_key||'')+'">'+thumb+'<span>'+(x._image?'🖼️ ':'✏️ ')+esc(x.title||x.content_key||'सामग्री')+(x._image&&x.content?' <span class="kd-image-badge">Image set</span>':'')+'</span></button>';}).join('')).join('')||'<div class="meta">कोई editable content नहीं।</div>';
+    map.innerHTML=(rows||[]).map(x=>`<button class="admin-action" type="button" data-content-key="${esc(x.content_key||'')}">✏️ ${esc(x.title||x.content_key||'सामग्री')}</button>`).join('')||'<div class="meta">कोई editable content नहीं।</div>';
     map.onclick=(ev)=>{ const btn=ev.target.closest('[data-content-key]'); if(!btn)return; selectContentForEdit(btn.getAttribute('data-content-key')||''); };
   }
   sel.onchange=()=>{
-    const x=(sel._rows||[]).find(r=>r.content_key===sel.value); if(!x){renderContentEditorType('text');return;}
-    $('contentTitle').value=x.title||''; $('contentValue').value=x._image?'':(x.content||''); $('contentPublished').checked=x.is_published!==false;
-    $('contentType').value=x._image?'image':'text'; renderContentEditorType($('contentType').value);
-    const preview=x._image&&x.content; if(preview){$('contentImagePreview').src=preview;$('contentImagePreviewWrap').style.display='block';}else{$('contentImagePreviewWrap').style.display='none';}
+    const x=(sel._rows||[]).find(r=>r.content_key===sel.value); if(!x)return;
+    $('contentTitle').value=x.title||''; $('contentValue').value=x.content||''; $('contentPublished').checked=x.is_published!==false;
   };
-  renderContentEditorType($('contentType').value||'text');
   await loadAdminCultureGlimpses();
 }
 function selectContentForEdit(key){const sel=$('contentSelect');if(!sel)return;sel.value=key;sel.dispatchEvent(new Event('change'));$('contentTitle')?.scrollIntoView({behavior:'smooth',block:'center'});$('contentTitle')?.focus();}
 async function saveSiteContent(){
   if(!isAdmin)return;
   const sel=$('contentSelect'), key=(sel.value||('custom_'+Date.now())).trim();
-  const type=$('contentType').value||'text';
-  const title=$('contentTitle').value.trim();
-  const published=$('contentPublished').checked;
-  if(!title){alert('सामग्री का नाम भरें।');return;}
+  const title=$('contentTitle').value.trim(),content=$('contentValue').value;
+  if(!title||!content.trim()){alert('सामग्री का नाम और text भरें।');return;}
   try{
     const current=(sel._rows||[]).find(r=>r.content_key===key);
-    let content=$('contentValue').value;
-    if(type==='image'){
-      const file=$('contentImageFile').files?.[0];
-      if(file){
-        if(!file.type.startsWith('image/')){alert('कृपया image file चुनें।');return;}
-        if(file.size>8*1024*1024){alert('Image अधिकतम 8 MB रखें।');return;}
-        $('contentStatus').textContent='⏳ Image upload हो रही है…';
-        const safe=file.name.replace(/[^a-zA-Z0-9._-]/g,'_');
-        const path='admin-assets/'+key+'/'+Date.now()+'-'+safe;
-        await storageUploadBlob('published-works',path,file,file.type);
-        content=publicStorageUrl('published-works',path);
-      }else if(current?._image){
-        content=current.content||'';
-      }
-      if(!content){alert('Image चुनें या पहले से लगी image रखें।');return;}
-    }else{
-      content=$('contentValue').value;
-      if(!content.trim()){alert('Text भरें।');return;}
-    }
-    const body={section_key:key,title,content,is_published:published};
+    const body={section_key:key,title,content,is_published:$('contentPublished').checked};
     if(current && current.id){
-      await dbRequest('site_content',{method:'PATCH',query:'?id=eq.'+encodeURIComponent(current.id),body:{title,content,is_published:published}});
+      await dbRequest('site_content',{method:'PATCH',query:'?id=eq.'+encodeURIComponent(current.id),body:{title,content,is_published:body.is_published}});
     }else{
       await dbRequest('site_content',{method:'POST',body});
     }
-    if(key==='hero_image'){window.kdCustomHeroImage=published?content:'';document.documentElement.style.setProperty('--kd-hero-bg',published&&content?`url("${content.replace(/"/g,'\\"')}")`:'');}
-    if(key==='site_background_image'){window.kdCustomBackgroundImage=published?content:'';document.documentElement.style.setProperty('--kd-bg-image',published&&content?`url("${content.replace(/"/g,'\\"')}")`:'');}
-    $('contentStatus').textContent='✅ '+(type==='image'?'Image':'सामग्री')+' Save हो गई। Public website पर लागू हो गई।';
-    $('contentImageFile').value='';
+    $('contentStatus').textContent='✅ सामग्री Save हो गई। अब यह webpage पर database से नियंत्रित होगी।';
     await loadAdminContent(); await loadSiteContent();
   }catch(e){$('contentStatus').textContent='❌ Save नहीं हुआ: '+e.message;}
 }
 async function newSiteContent(){
-  $('contentSelect').value='';$('contentTitle').value='';$('contentValue').value='';$('contentPublished').checked=true;$('contentType').value='text';$('contentImageFile').value='';$('contentImagePreviewWrap').style.display='none';renderContentEditorType('text');$('contentStatus').textContent='नए Text या Image के लिए Page/Section चुनें।';
+  $('contentSelect').value='';$('contentTitle').value='';$('contentValue').value='';$('contentPublished').checked=true;$('contentStatus').textContent='नई सामग्री के लिए key स्वतः बनेगी।';
 }
 async function loadAdminCultureGlimpses(){
   const box=$('adminCultureGlimpses'); if(!box)return;
@@ -1063,7 +917,7 @@ async function showAdmin(){$('admin').style.display='block';await refreshAdmin()
 
 async function sendSubmission(e){
   e.preventDefault();
-  const name=$('subName').value.trim(),phone=$('subPhone').value.trim(),bio=$('subBio').value.trim(),title=$('subTitle').value.trim(),genre=$('subCategory').value,topicCategories=[...document.querySelectorAll('#submissionTopicCategories input:checked')].map(x=>x.value),category=[genre,...topicCategories].filter(Boolean).join(' | '),method=$('subMethod').value,content=$('subContent').value.trim(),photo=$('subPhoto').files[0],file=$('subFile').files[0],status=$('submissionStatus');
+  const name=$('subName').value.trim(),phone=$('subPhone').value.trim(),bio=$('subBio').value.trim(),title=$('subTitle').value.trim(),category=$('subCategory').value,method=$('subMethod').value,content=$('subContent').value.trim(),photo=$('subPhoto').files[0],file=$('subFile').files[0],status=$('submissionStatus');
   if(!name||!phone||!bio||!title||!category){status.textContent='❌ सभी अनिवार्य जानकारी भरें।';return;}
   if(phone.replace(/\D/g,'').length<10){status.textContent='❌ सही मोबाइल नंबर लिखें।';return;}
   if(method==='typing' && !content){status.textContent='❌ अपनी रचना टाइप करें।';return;}
@@ -1081,7 +935,7 @@ async function sendSubmission(e){
     const payload={user_id:uid,name,phone,bio,title,category,content:method==='typing'?content:('यह रचना फ़ाइल के रूप में भेजी गई है: '+file.name),status:'pending',submission_method:method,file_path:filePath,author_photo_path:photoPath};
     await dbRequest('submissions',{method:'POST',body:payload});
     status.textContent='✅ रचना सफलतापूर्वक भेज दी गई। Admin की स्वीकृति के बाद ही यह प्रकाशित होगी।';
-    $('submissionForm').reset(); document.querySelectorAll('#submissionTopicCategories input').forEach(x=>x.checked=false); $('subFileWrap').style.display='none'; localStorage.setItem('kd_name',name);
+    $('submissionForm').reset(); $('subFileWrap').style.display='none'; localStorage.setItem('kd_name',name);
     if(isAdmin) await refreshAdmin();
   }catch(err){console.error('Submission error:',err);status.textContent='❌ रचना भेजी नहीं जा सकी: '+err.message;}
 }
@@ -1092,8 +946,7 @@ async function approveSubmission(id){
     let publishedFile=null,publishedPhoto=null;
     if(x.file_path){const blob=await storageDownload('submission-files',x.file_path);publishedFile='works/'+x.user_id+'/'+Date.now()+'-'+(x.file_path.split('/').pop()||'work');await storageUploadBlob('published-works',publishedFile,blob,blob.type);}
     if(x.author_photo_path){const blob=await storageDownload('submission-files',x.author_photo_path);publishedPhoto='authors/'+x.user_id+'/'+Date.now()+'-'+(x.author_photo_path.split('/').pop()||'author.jpg');await storageUploadBlob('published-works',publishedPhoto,blob,blob.type);}
-    const auto=resolvedArticleCategories({title:x.title,content:x.content,category:x.category||'',author_name:x.name,author_bio:x.bio||'',submission_method:x.submission_method||''});
-    await dbRequest('articles',{method:'POST',body:{title:x.title,content:x.content,category:auto.join(' | '),author_name:x.name,status:'published',author_bio:x.bio||'',author_photo_url:publishedPhoto?publicStorageUrl('published-works',publishedPhoto):null,file_url:publishedFile?publicStorageUrl('published-works',publishedFile):null}});
+    await dbRequest('articles',{method:'POST',body:{title:x.title,content:x.content,category:x.category||'अन्य',author_name:x.name,status:'published',author_bio:x.bio||'',author_photo_url:publishedPhoto?publicStorageUrl('published-works',publishedPhoto):null,file_url:publishedFile?publicStorageUrl('published-works',publishedFile):null}});
     await dbRequest('submissions',{method:'PATCH',query:'?id=eq.'+encodeURIComponent(id),body:{status:'approved',published_file_path:publishedFile,published_photo_path:publishedPhoto}});
     alert('✅ रचना स्वीकृत होकर प्रकाशित हो गई।'); await refreshAdmin(); await loadArticles();
   }catch(e){alert('Publish failed: '+e.message);}
@@ -1104,18 +957,9 @@ async function rejectSubmission(id){
 }
 async function trackVisitor(){
   try{
-    // हर page open/refresh = 1 Visit. Unique Visitor = एक public IP को पूरे समय में केवल एक बार। बाद की तारीखों में वही IP केवल Visit गिना जाएगा।
-    const payload={
-      user_id:currentUser?.id||null,
-      page_path:location.pathname+location.hash,
-      referrer:document.referrer||null,
-      user_agent:navigator.userAgent||null,
-      screen_width:screen.width||null,
-      screen_height:screen.height||null,
-      language:navigator.language||null
-    };
-    const r=await fetch('/api/visitor',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-    if(!r.ok){const t=await r.text();throw new Error('HTTP '+r.status+(t?' — '+t.slice(0,180):''));}
+    let vid=localStorage.getItem('kd_visitor_id');
+    if(!vid){vid=crypto.randomUUID?crypto.randomUUID():('v_'+Date.now()+'_'+Math.random().toString(36).slice(2));localStorage.setItem('kd_visitor_id',vid);}
+    await dbRequest('visitor_events',{method:'POST',body:{visitor_id:vid,user_id:currentUser?.id||null,page_path:location.pathname+location.hash,referrer:document.referrer||null,user_agent:navigator.userAgent||null,screen_width:screen.width||null,screen_height:screen.height||null,language:navigator.language||null}});
   }catch(e){console.warn('Visitor tracking:',e.message);}
 }
 function localDayStart(){const d=new Date();d.setHours(0,0,0,0);return d.toISOString();}
@@ -1127,7 +971,7 @@ async function loadVisitorAnalytics(){
     const todayStart=new Date();todayStart.setHours(0,0,0,0);
     const today=all.filter(x=>new Date(x.created_at)>=todayStart);
     const last7=all.filter(x=>now-new Date(x.created_at).getTime()<=7*day);
-    const unique=a=>a.filter(x=>x.is_unique===true).length;
+    const unique=a=>new Set(a.map(x=>x.visitor_id).filter(Boolean)).size;
     $('statVisitsTotal').textContent=all.length; $('statVisits7').textContent=last7.length; $('statUniqueTotal').textContent=unique(all);
     $('statVisitsToday').textContent=today.length; $('statUniqueToday').textContent=unique(today);
     $('statPagesToday').textContent=new Set(today.map(x=>x.page_path||'/')).size;
@@ -1206,235 +1050,18 @@ async function sendAdminChatReply(){
 async function publishArticle(){
   const title=$('articleTitle').value.trim(),content=$('articleContent').value.trim();
   if(!title||!content){alert('Title और content भरें।');return;}
-  const baseCategory=$('articleCategory').value.trim();
-  const topics=[...document.querySelectorAll('#articleTopicCategories input:checked')].map(x=>x.value);
-  const draft={title,content,category:[baseCategory,...topics].filter(Boolean).join(' | '),author_name:$('articleAuthor').value.trim()||'कुड़माली धन्धौरा'};
-  const category=resolvedArticleCategories(draft).join(' | ');
   try{
-    await dbRequest('articles',{method:'POST',body:{...draft,category,status:'published'}});
-    alert('Article published.');$('articleTitle').value='';$('articleContent').value='';$('articleCategory').value='';$('articleAuthor').value='';document.querySelectorAll('#articleTopicCategories input').forEach(x=>x.checked=false);await loadArticles();await refreshAdmin();
+    await dbRequest('articles',{method:'POST',body:{title,content,category:$('articleCategory').value.trim(),author_name:$('articleAuthor').value.trim()||'कुड़माली धन्धौरा',status:'published'}});
+    alert('Article published.');$('articleTitle').value='';$('articleContent').value='';await loadArticles();await refreshAdmin();
   }catch(e){alert('Publish failed: '+e.message);}
 }
 window.kdArticleStore={};
-const KD_CATEGORY_TREE={
-  'कुड़माली भाषा':['शब्द','व्याकरण','साहित्य','लोकभाषा'],
-  'शिक्षा':['अध्ययन सामग्री','परीक्षा तैयारी','शोध / अकादमिक'],
-  'संस्कृति':['लोकगीत','नृत्य','पर्व / परंपरा','लोककला / लोकजीवन'],
-  'लेख / ब्लॉग':['विचार','अनुभव','ब्लॉग'],
-  'संसाधन':['पुस्तक','नोट्स / प्रश्न','संदर्भ'],
-  'समाज':['गांव / सामुदायिक जीवन','लोकजीवन'],
-  'लोक-साहित्य':['लोककथा','लोकगीत','लोकनृत्य'],
-  'शोध':['शोध-पत्र','अकादमिक','संदर्भ']
-};
-const KD_CATEGORY_ICONS={'कुड़माली भाषा':'📖','शिक्षा':'🎓','संस्कृति':'🥁','लेख / ब्लॉग':'✍️','संसाधन':'📚','समाज':'👥','लोक-साहित्य':'🎶','शोध':'🔬'};
-const KD_CATEGORY_RULES={
- 'कुड़माली भाषा':{keywords:['कुड़माली','कुड़मी','कुरमाली','भाषा','व्याकरण','शब्द','बोली','मुहावरा','लोकोक्ति','समानार्थी','विलोम'],subs:{'शब्द':['शब्द','शब्दावली','मुहावरा','लोकोक्ति','पहेली','बुझौवल'],'व्याकरण':['व्याकरण','संज्ञा','सर्वनाम','विशेषण','क्रिया','काल','वचन','लिंग','कारक','वाक्य'],'साहित्य':['साहित्य','कविता','कहानी','उपन्यास','निबंध','गीत','ग़ज़ल'],'लोकभाषा':['लोकभाषा','बोली','बोलचाल']}},
- 'शिक्षा':{keywords:['शिक्षा','पढ़ाई','अध्ययन','विद्यार्थी','छात्र','विद्यालय','महाविद्यालय','विश्वविद्यालय','परीक्षा','पाठ्यक्रम','jpsc','jssc','नोट्स','प्रश्न'],subs:{'अध्ययन सामग्री':['अध्ययन','पाठ','पाठ्यक्रम','नोट्स','अध्ययन सामग्री'],'परीक्षा तैयारी':['परीक्षा','jpsc','jssc','प्रश्न','अभ्यास','प्रश्नपत्र'],'शोध / अकादमिक':['शोध','अकादमिक','विश्वविद्यालय','शोधार्थी','प्रोफेसर','शोध-पत्र']}},
- 'संस्कृति':{keywords:['संस्कृति','परंपरा','पर्व','त्योहार','सरहुल','सोहराय','बंदना','करम','टुसू','बिहा','अखरा','मांदर','नृत्य','लोकगीत','लोककला','रीति','रिवाज'],subs:{'लोकगीत':['लोकगीत','गीत','पांतागीत','डमकच'],'नृत्य':['नृत्य','नाच','डमकच','लोकनृत्य'],'पर्व / परंपरा':['सरहुल','सोहराय','बंदना','करम','टुसू','पर्व','त्योहार','परंपरा','रीति','रिवाज'],'लोककला / लोकजीवन':['लोककला','माटी','हाट','खेती','लोकजीवन','गांव']}},
- 'लेख / ब्लॉग':{keywords:['लेख','ब्लॉग','विचार','अनुभव','टिप्पणी','निबंध','संपादकीय','दृष्टिकोण'],subs:{'विचार':['विचार','मत','दृष्टिकोण','चिंतन','चर्चा'],'अनुभव':['अनुभव','संस्मरण','यात्रा','देखा','जीवन अनुभव'],'ब्लॉग':['ब्लॉग','पोस्ट','डायरी','टिप्पणी']}},
- 'संसाधन':{keywords:['संसाधन','पुस्तक','किताब','ग्रंथ','नोट्स','प्रश्न','संदर्भ','शब्दकोश','कोश','दस्तावेज','document','pdf'],subs:{'पुस्तक':['पुस्तक','किताब','ग्रंथ'],'नोट्स / प्रश्न':['नोट्स','प्रश्न','प्रश्नोत्तर','अभ्यास'],'संदर्भ':['संदर्भ','reference','शब्दकोश','कोश','दस्तावेज','document','pdf']}},
- 'समाज':{keywords:['समाज','गांव','गाँव','समुदाय','सामुदायिक','परिवार','युवा','महिला','किसान','मजदूर','जनजीवन','लोकजीवन','पहचान','विकास'],subs:{'गांव / सामुदायिक जीवन':['गांव','गाँव','समुदाय','सामुदायिक','ग्राम','बस्ती'],'लोकजीवन':['लोकजीवन','परिवार','किसान','मजदूर','युवा','महिला','जनजीवन']}},
- 'लोक-साहित्य':{keywords:['लोक-साहित्य','लोक साहित्य','लोककथा','लोकगीत','लोकगाथा','लोकनृत्य','लोककहानी','कथा','दंतकथा'],subs:{'लोककथा':['लोककथा','लोककहानी','दंतकथा','कथा'],'लोकगीत':['लोकगीत','गीत','पांतागीत'],'लोकनृत्य':['लोकनृत्य','नृत्य','नाच']}},
- 'शोध':{keywords:['शोध','शोध-पत्र','शोधपत्र','research','अकादमिक','सर्वेक्षण','अध्ययन','विश्लेषण','संदर्भ','स्रोत','डेटा'],subs:{'शोध-पत्र':['शोध-पत्र','शोधपत्र','research paper','पेपर'],'अकादमिक':['अकादमिक','विश्वविद्यालय','प्रोफेसर','शोधार्थी','सैद्धांतिक'],'संदर्भ':['संदर्भ','स्रोत','reference','bibliography','ग्रंथसूची']}}
-};
-let KD_CUSTOM_CATEGORY_RULES={};
-function normalizeRuleText(v){return normalizeSearchText(String(v||'')).replace(/[|,;]+/g,' ');} 
-function getArticleHaystack(item){return normalizeSearchText([item?.title,item?.content,item?.category,item?.author_name,item?.author_bio,item?.submission_method].filter(Boolean).join(' '));}
-function scoreKeyword(hay,kw){const k=normalizeSearchText(kw);if(!k)return 0; if(hay.includes(k))return k.length<=3?1:2; return 0;}
-function autoClassifyArticle(item){
-  const hay=getArticleHaystack(item);
-  const title=normalizeSearchText(item?.title||'');
-  const out=[];
-  const rules={...KD_CATEGORY_RULES,...KD_CUSTOM_CATEGORY_RULES};
-  for(const [parent,rule] of Object.entries(rules)){
-    let score=0;
-    for(const kw of (rule.keywords||[])){const hit=scoreKeyword(hay,kw); if(hit) score += hit + (title.includes(normalizeSearchText(kw))?2:0);}
-    const matchedSubs=[];
-    for(const [sub,words] of Object.entries(rule.subs||{})){
-      let ss=0; for(const kw of words||[]){const hit=scoreKeyword(hay,kw); if(hit) ss += hit + (title.includes(normalizeSearchText(kw))?2:0);}
-      if(ss>=1){matchedSubs.push([sub,ss]);score+=Math.min(ss,5);}
-    }
-    if(score>=2){out.push(parent);matchedSubs.sort((a,b)=>b[1]-a[1]).forEach(([sub])=>out.push(sub));}
-  }
-  // Keep an explicitly supplied category/genre as an additional signal, never as the only source.
-  for(const c of articleCategories(item?.category)){if(c && !out.includes(c))out.push(c);}
-  return [...new Set(out)];
-}
-function resolvedArticleCategories(item){const auto=autoClassifyArticle(item);return auto.length?auto:['अन्य विषय'];}
-function applyAutoCategories(item){const cats=resolvedArticleCategories(item);return {...item,category:cats.join(' | '),auto_categories:cats};}
-async function loadCustomCategoryRules(showStatus=false){
-  try{
-    const rows=await dbRequest('site_content',{query:'?select=section_key,title,content,is_published&section_key=eq.category_rules&limit=1'});
-    const raw=rows?.[0]?.content; KD_CUSTOM_CATEGORY_RULES={};
-    if(raw){const obj=JSON.parse(raw); if(obj&&typeof obj==='object'){for(const [parent,rule] of Object.entries(obj)){if(parent&&rule&&typeof rule==='object'){KD_CUSTOM_CATEGORY_RULES[parent]={keywords:Array.isArray(rule.keywords)?rule.keywords:[],subs:rule.subs&&typeof rule.subs==='object'?rule.subs:{}}; KD_CATEGORY_TREE[parent]=[...new Set(Object.keys(KD_CATEGORY_TREE[parent]||[]).concat(Object.keys(KD_CUSTOM_CATEGORY_RULES[parent].subs||{})))];}}}}
-    if(showStatus){const el=$('customCategoryRuleStatus');if(el)el.textContent='✅ '+Object.keys(KD_CUSTOM_CATEGORY_RULES).length+' custom category rule loaded.';}
-    renderTeamKalamCategoryTiles(); renderSubcategoryPanel();
-  }catch(e){if(showStatus){const el=$('customCategoryRuleStatus');if(el)el.textContent='❌ नियम लोड नहीं हुए: '+e.message;}}
-}
-async function saveCustomCategoryRule(){
-  if(!isAdmin)return;
-  const name=$('customCategoryName')?.value.trim(), subs=($('customCategorySubs')?.value||'').split(',').map(x=>x.trim()).filter(Boolean), keywords=($('customCategoryKeywords')?.value||'').split(',').map(x=>x.trim()).filter(Boolean);
-  const st=$('customCategoryRuleStatus');
-  if(!name){if(st)st.textContent='❌ नई मुख्य श्रेणी का नाम लिखें।';return;}
-  if(!keywords.length){if(st)st.textContent='❌ पहचान-शब्द दें ताकि automatic formula category पहचान सके।';return;}
-  KD_CUSTOM_CATEGORY_RULES[name]={keywords,subs:Object.fromEntries(subs.map(s=>[s,keywords]))};
-  const merged={...KD_CATEGORY_RULES,...KD_CUSTOM_CATEGORY_RULES};
-  try{
-    const rows=await dbRequest('site_content',{query:'?select=id&section_key=eq.category_rules&limit=1'});
-    const body={section_key:'category_rules',title:'Automatic Article Category Rules',content:JSON.stringify(KD_CUSTOM_CATEGORY_RULES),is_published:true};
-    if(rows?.[0]?.id)await dbRequest('site_content',{method:'PATCH',query:'?id=eq.'+encodeURIComponent(rows[0].id),body:{title:body.title,content:body.content,is_published:true}});else await dbRequest('site_content',{method:'POST',body});
-    KD_CATEGORY_TREE[name]=[...new Set(subs)];
-    $('customCategoryName').value='';$('customCategorySubs').value='';$('customCategoryKeywords').value='';
-    if(st)st.textContent='✅ नई category/rule save हो गई। आगे से publish होते समय automatic classification में इसका उपयोग होगा।';
-    renderTeamKalamCategoryTiles();renderSubcategoryPanel();
-  }catch(e){if(st)st.textContent='❌ Rule save नहीं हुआ: '+e.message;}
-}
-
-let kdTeamKalamFilter='all';
-let kdTeamKalamSubcategory='all';
-function renderTeamKalamCategoryTiles(){
-  const box=document.getElementById('teamKalamCategoryTiles'); if(!box)return;
-  const icons={'कुड़माली भाषा':'📖','शिक्षा':'🎓','संस्कृति':'🥁','लेख / ब्लॉग':'✍️','संसाधन':'📚','समाज':'👥','लोक-साहित्य':'🎶','शोध':'🔬'};
-  box.innerHTML=Object.keys(KD_CATEGORY_TREE).map(cat=>{const subs=KD_CATEGORY_TREE[cat]||[];const count=(window.kdAllPublishedArticles||[]).filter(x=>x.source==='admin'&&articleHasCategory(x,cat)).length;return `<div class="tile clickable ${kdTeamKalamFilter===cat?'active-category':''}" data-team-category="${esc(cat)}" role="button" tabindex="0"><div class="icon">${icons[cat]||'📂'}</div><span><b>${esc(cat)}</b><br><small>${subs.map(esc).join(' • ')}</small><br><small>📝 ${count} प्रकाशित</small></span></div>`;}).join('');
-  box.querySelectorAll('[data-team-category]').forEach(t=>{const go=()=>setTeamKalamFilter(t.dataset.teamCategory,true);t.addEventListener('click',go);t.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});});
-}
-function setTeamKalamFilter(cat,scroll=false){
-  kdTeamKalamFilter=cat||'all'; kdTeamKalamSubcategory='all'; renderTeamKalamCategoryTiles(); renderTeamKalamSubcategoryPanel(); renderTeamKalamArticles();
-  if(scroll)document.getElementById('team-kalam')?.scrollIntoView({behavior:'smooth',block:'start'});
-}
-function renderTeamKalamSubcategoryPanel(){
-  const box=document.getElementById('teamKalamSubcategoryPanel'); if(!box)return;
-  if(kdTeamKalamFilter==='all'){box.style.display='none';box.innerHTML='';return;}
-  const subs=KD_CATEGORY_TREE[kdTeamKalamFilter]||[]; if(!subs.length){box.style.display='none';return;}
-  if(!subs.includes(kdTeamKalamSubcategory))kdTeamKalamSubcategory='all';
-  box.style.display='block';
-  box.innerHTML='<div class="subcategory-title">↳ '+esc(kdTeamKalamFilter)+' की उप-श्रेणियाँ</div><div class="subcategory-filter"><button type="button" class="'+(kdTeamKalamSubcategory==='all'?'active':'')+'" data-team-sub="all">सभी</button>'+subs.map(x=>'<button type="button" class="'+(kdTeamKalamSubcategory===x?'active':'')+'" data-team-sub="'+esc(x)+'">'+esc(x)+'</button>').join('')+'</div>';
-  box.querySelectorAll('[data-team-sub]').forEach(b=>b.addEventListener('click',()=>{kdTeamKalamSubcategory=b.dataset.teamSub||'all';renderTeamKalamSubcategoryPanel();renderTeamKalamArticles();}));
-}
-function teamArticleHasCategory(x,cat){
-  if(cat==='all')return true;
-  // Use the same category-resolution rules as the main published-article list.
-  // Thus every Admin-published article is reachable from every main/sub-category
-  // assigned to it, regardless of its publication date.
-  return articleHasCategory(x,cat);
-}
-function renderTeamKalamArticles(){
-  const grid=document.getElementById('teamKalamArticlesGrid');if(!grid)return;
-  const all=(window.kdAllPublishedArticles||[]).filter(x=>x.source==='admin');
-  let data=all.filter(x=>teamArticleHasCategory(x,kdTeamKalamFilter));
-  if(kdTeamKalamSubcategory!=='all')data=data.filter(x=>articleCategories(x.category).includes(kdTeamKalamSubcategory)||normalizeSearchText(String(x.title||'')+' '+String(x.content||'')+' '+String(x.category||'')).includes(normalizeSearchText(kdTeamKalamSubcategory).replace(' / ',' ')));
-  const st=document.getElementById('teamKalamFilterStatus');
-  if(st)st.textContent=kdTeamKalamFilter==='all'?('कुल '+all.length+' टीम धन्धौरा की प्रकाशित सामग्री'):(kdTeamKalamSubcategory==='all'?('“'+kdTeamKalamFilter+'” में '+data.length+' सामग्री'):('“'+kdTeamKalamFilter+' → '+kdTeamKalamSubcategory+'” में '+data.length+' सामग्री'));
-  if(!data.length){grid.innerHTML='<div class="card"><h3>इस श्रेणी में अभी टीम धन्धौरा की कोई प्रकाशित सामग्री नहीं है।</h3><p class="meta">Admin द्वारा प्रकाशित करते समय उपयुक्त मुख्य/उप-श्रेणियाँ चुनने पर रचना यहाँ दिखाई देगी।</p></div>';return;}
-  grid.innerHTML=data.map(x=>{const id=String(x.id||'').replace(/'/g,"\'");const tags=articleCategories(x.category).map(c=>'<button type="button" class="article-category-tag" onclick="setTeamKalamCategoryFromTag('+JSON.stringify(c)+')">'+esc(c)+'</button>').join('');const preview=esc(x.content||'').slice(0,220),more=(x.content||'').length>220?'...':'';return `<article class="card rachna-card"><div style="font-size:42px">🖋️</div><span class="meta">टीम धन्धौरा • ${x.created_at?new Date(x.created_at).toLocaleDateString('hi-IN'):''}</span><div class="article-category-tags">${tags}</div><h3>${esc(x.title||'रचना')}</h3><p style="white-space:pre-line">${preview}${more}</p><p class="meta">प्रकाशक: धन्धौरा की कलम से</p><p><button class="btn" type="button" onclick="openRachnaItem('${id}')">${x.file_url?'📎 Document देखें':'📖 पूरी रचना पढ़ें'}</button></p></article>`;}).join('');
-}
-function setTeamKalamCategoryFromTag(cat){
-  for(const [parent,subs] of Object.entries(KD_CATEGORY_TREE)){if(parent===cat){setTeamKalamFilter(parent,true);return;}if(subs.includes(cat)){setTeamKalamFilter(parent,true);setTimeout(()=>{kdTeamKalamSubcategory=cat;renderTeamKalamSubcategoryPanel();renderTeamKalamArticles();},50);return;}}
-}
-function articleCategories(value){return String(value||'').split('|').flatMap(x=>x.split(',')).map(x=>x.trim()).filter(Boolean);}
-function articleHasCategory(item,cat){
-  if(cat==='all')return true;
-  const cats=articleCategories(item.category);
-  if(cats.includes(cat))return true;
-  // If an article is assigned to a sub-category, it automatically belongs to
-  // its parent category too. This makes the same article reachable from every
-  // selected main category, not only from the latest-article list.
-  for(const [parent,subs] of Object.entries(KD_CATEGORY_TREE)){
-    if(parent===cat && subs.some(sub=>cats.includes(sub)))return true;
-    if(subs.includes(cat) && cats.includes(parent))return true;
-  }
-  const hay=(String(item.title||'')+' '+String(item.content||'')+' '+String(item.category||'')).toLocaleLowerCase('hi-IN');
-  const aliases={
-    'कुड़माली भाषा':['कुड़माली','भाषा','व्याकरण','साहित्य'],
-    'शिक्षा':['शिक्षा','अध्ययन','परीक्षा','jpsc','jssc'],
-    'संस्कृति':['संस्कृति','परंपरा','लोकगीत','सरहुल','सोहराय','करम','टुसू','अखरा','मांदर','नृत्य'],
-    'लेख / ब्लॉग':['लेख','ब्लॉग','विचार','अनुभव'],
-    'संसाधन':['संसाधन','पुस्तक','नोट्स','प्रश्न','संदर्भ'],
-    'समाज':['समाज','गांव','सामुदायिक','समुदाय','लोकजीवन'],
-    'लोक-साहित्य':['लोक-साहित्य','लोक साहित्य','लोकगीत','लोककथा','लोकनृत्य'],
-    'शोध':['शोध','research','अकादमिक','अध्ययन']
-  };
-  return (aliases[cat]||[]).some(k=>hay.includes(k.toLocaleLowerCase('hi-IN')));
-}
-let kdCurrentArticleFilter='all';
-let kdCurrentSubcategory='all';
-function renderSubcategoryPanel(){
-  const box=document.getElementById('articleSubcategoryPanel'); if(!box)return;
-  const subs=KD_CATEGORY_TREE[kdCurrentArticleFilter];
-  if(!subs){box.style.display='none';box.innerHTML='';kdCurrentSubcategory='all';return;}
-  if(!subs.includes(kdCurrentSubcategory))kdCurrentSubcategory='all';
-  box.style.display='block';
-  box.innerHTML='<div class="subcategory-title">↳ '+esc(kdCurrentArticleFilter)+' की उप-श्रेणियाँ</div><div class="subcategory-filter"><button type="button" class="'+(kdCurrentSubcategory==='all'?'active':'')+'" data-subcategory="all">सभी</button>'+subs.map(x=>'<button type="button" class="'+(kdCurrentSubcategory===x?'active':'')+'" data-subcategory="'+esc(x)+'">'+esc(x)+'</button>').join('')+'</div>';
-  box.querySelectorAll('[data-subcategory]').forEach(b=>b.addEventListener('click',()=>setArticleSubcategory(b.dataset.subcategory,true)));
-}
-function setArticleFilter(cat,scroll=false){
-  kdCurrentArticleFilter=cat||'all'; kdCurrentSubcategory='all';
-  document.querySelectorAll('#articleCategoryFilter [data-filter-category]').forEach(b=>b.classList.toggle('active',b.dataset.filterCategory===kdCurrentArticleFilter));
-  document.querySelectorAll('[data-category-tile]').forEach(t=>t.classList.toggle('active-category',t.dataset.categoryTile===kdCurrentArticleFilter));
-  renderSubcategoryPanel(); renderFilteredArticles();
-  if(scroll)document.getElementById('blog')?.scrollIntoView({behavior:'smooth',block:'start'});
-}
-function setArticleSubcategory(sub,scroll=false){kdCurrentSubcategory=sub||'all';renderSubcategoryPanel();renderFilteredArticles();if(scroll)document.getElementById('blog')?.scrollIntoView({behavior:'smooth',block:'start'});}
-function articleMatchesCurrentFilter(x){
-  if(!articleHasCategory(x,kdCurrentArticleFilter))return false;
-  if(kdCurrentSubcategory==='all')return true;
-  const cats=articleCategories(x.category);
-  if(cats.includes(kdCurrentSubcategory))return true;
-  return normalizeSearchText(String(x.title||'')+' '+String(x.content||'')).includes(normalizeSearchText(kdCurrentSubcategory).replace(' / ',' '));
-}
-function renderCategorySectionArticles(cat,boxId){
-  const box=document.getElementById(boxId); if(!box)return;
-  const all=window.kdAllPublishedArticles||[];
-  const data=all.filter(x=>articleHasCategory(x,cat));
-  const subs=KD_CATEGORY_TREE[cat]||[];
-  let html='<h3>📚 इस category की प्रकाशित रचनाएँ</h3>';
-  html+='<div class="category-published-count">'+(data.length?('कुल '+data.length+' संबंधित प्रकाशित सामग्री'):'अभी इस category में कोई प्रकाशित सामग्री नहीं मिली।')+'</div>';
-  if(subs.length){html+='<div class="category-sub-links">'+subs.map(sub=>'<button type="button" data-cat-sub="'+esc(sub)+'">'+esc(sub)+'</button>').join('')+'</div>'}
-  if(!data.length){box.innerHTML=html;box.querySelectorAll('[data-cat-sub]').forEach(b=>b.onclick=()=>{setArticleFilter(cat,true);setTimeout(()=>setArticleSubcategory(b.dataset.catSub,true),50)});return;}
-  html+='<div class="category-published-grid">';
-  data.slice(0,50).forEach(x=>{const id=String(x.id||'');const preview=String(x.content||'').replace(/\s+/g,' ').slice(0,170);html+='<article class="card" data-category-article="'+esc(id)+'"><span class="meta">'+esc(x.category||'रचना')+'</span><h3>'+esc(x.title||'रचना')+'</h3><p>'+esc(preview)+(String(x.content||'').length>170?'…':'')+'</p><p class="meta">रचनाकार: '+esc(x.author_name||'कुड़माली धन्धौरा')+'</p><button type="button" class="btn">'+(x.file_url?'📎 Document देखें':'📖 पूरी रचना पढ़ें')+' →</button></article>'});
-  html+='</div>'; box.innerHTML=html;
-  box.querySelectorAll('[data-category-article]').forEach(el=>el.addEventListener('click',e=>{if(e.target.closest('button')){openRachnaItem(el.dataset.categoryArticle);return;}openRachnaItem(el.dataset.categoryArticle);}));
-  box.querySelectorAll('[data-cat-sub]').forEach(b=>b.onclick=()=>{setArticleFilter(cat,true);setTimeout(()=>setArticleSubcategory(b.dataset.catSub,true),50)});
-}
-function renderAllCategorySectionArticles(){
-  const map={
-    'कुड़माली भाषा':'categoryArticles-language','शिक्षा':'categoryArticles-education','संस्कृति':'categoryArticles-culture',
-    'संसाधन':'categoryArticles-resources','समाज':'categoryArticles-society','लोक-साहित्य':'categoryArticles-folk','शोध':'categoryArticles-research'
-  };
-  Object.entries(map).forEach(([cat,id])=>renderCategorySectionArticles(cat,id));
-}
-
-function renderFilteredArticles(){
-  const grid=document.getElementById('publishedArticlesGrid')||document.querySelector('#blog .grid');if(!grid)return;
-  const all=window.kdAllPublishedArticles||[],data=all.filter(articleMatchesCurrentFilter),status=document.getElementById('articleFilterStatus');
-  if(status)status.textContent=kdCurrentArticleFilter==='all'?('कुल '+all.length+' प्रकाशित सामग्री'):(kdCurrentSubcategory==='all'?('“'+kdCurrentArticleFilter+'” में '+data.length+' सामग्री'):('“'+kdCurrentArticleFilter+' → '+kdCurrentSubcategory+'” में '+data.length+' सामग्री'));
-  if(!data.length){grid.innerHTML='<div class="card"><h3>इस श्रेणी में अभी कोई प्रकाशित सामग्री नहीं है।</h3><p class="meta">Admin या रचनाकार द्वारा इस विषय/उप-श्रेणी को जोड़ने पर सामग्री यहाँ दिखाई देगी।</p></div>';loadAuthorsFromArticles(all);return;}
-  // Keep the complete published store for search/navigation, even while the list is filtered.
-  window.kdArticleStore={}; all.forEach(x=>window.kdArticleStore[String(x.id)]=x);
-  grid.innerHTML=data.map(x=>{
-    const id=String(x.id||'').replace(/'/g,"\\'");
-    const preview=esc(x.content||'').slice(0,220),more=(x.content||'').length>220?'...':'';
-    const action=x.file_url?'📎 रचना पढ़ें / देखें':'📖 पूरी रचना पढ़ें';
-    const tags=articleCategories(x.category).map(c=>'<button type="button" class="article-category-tag" onclick="navigateByArticleCategory('+JSON.stringify(c)+')">'+esc(c)+'</button>').join('');
-    return `<article class="card rachna-card" data-article-id="${esc(String(x.id||''))}">${x.author_photo_url?`<img src="${esc(x.author_photo_url)}" alt="${esc(x.author_name||'रचनाकार')}" style="width:72px;height:72px;border-radius:50%;object-fit:cover">`:'<div style="font-size:42px">📚</div>'}<span class="meta">${esc(x.category||'लेख')} • ${x.created_at?new Date(x.created_at).toLocaleDateString('hi-IN'):''}</span><div class="article-category-tags">${tags}</div><h3>${esc(x.title||'')}</h3><p style="white-space:pre-line">${preview}${more}</p><p class="meta">रचनाकार: ${esc(x.author_name||'कुड़माली धन्धौरा')}</p>${x.author_bio?`<p class="meta">${esc(x.author_bio)}</p>`:''}<p><button class="btn" type="button" onclick="openRachnaItem('${id}')">${action}</button></p><div class="notice" style="margin-top:12px;padding:12px 14px;border-left:3px solid #f28c28;background:#fff8eb;border-radius:8px;font-size:13px;line-height:1.6;color:#5a4630"><b>⚠️ रचना प्रकाशन संबंधी अस्वीकरण:</b> यह रचना रचनाकार द्वारा उपलब्ध कराई गई है। इसका प्रकाशन कुड़माली धन्धौरा/उसकी टीम द्वारा रचना में निहित प्रत्येक तथ्य, दावा, विचार या कथन की सत्यता की पुष्टि नहीं माना जाएगा। रचना की मौलिकता, तथ्यात्मक शुद्धता, अधिकार/अनुमति तथा किसी भी त्रुटि, आपत्ति, अधिकार-संबंधी दावा या विवाद की जिम्मेदारी रचनाकार की होगी। टीम आवश्यकतानुसार रचना को संपादित, रोक या हटाने का अधिकार रखती है।</div><div class="notice" style="margin-top:10px;padding:12px 14px;border-left:3px solid #6b8e23;background:#f4f8ed;border-radius:8px;font-size:13px;line-height:1.6;color:#3d4930"><b>📖 पाठक सूचना / Reader’s Note:</b> यह सामग्री संबंधित रचनाकार द्वारा प्रस्तुत की गई है। इसमें व्यक्त विचार, दावे एवं दृष्टिकोण रचनाकार के अपने हैं और इन्हें कुड़माली धन्धौरा या उसकी टीम की आधिकारिक राय न माना जाए।<br><b>English:</b> This work is submitted by the respective author. Its views, opinions and claims are those of the author and are not necessarily the official views of Kudmali Dhandhaura or its team.</div></article>`;
-  }).join('');
-  loadAuthorsFromArticles(all);
-}
-function navigateByArticleCategory(cat){
-  for(const [parent,subs] of Object.entries(KD_CATEGORY_TREE)){
-    if(parent===cat){setArticleFilter(parent,true);return;}
-    if(subs.includes(cat)){setArticleFilter(parent,true);setTimeout(()=>setArticleSubcategory(cat,false),50);return;}
-  }
-  setArticleFilter(cat,true);
-}
 async function loadArticles(){
   try{
-    await loadCustomCategoryRules(false);
     const grid=document.querySelector('#blog .grid');if(!grid)return;
     // Load a large history so an older published work does not disappear after new posts.
     let data=await dbRequest('articles',{query:'?select=*&status=eq.published&order=created_at.desc&limit=1000'});
-    data=Array.isArray(data)?data.map(x=>applyAutoCategories({...x,source:'admin'})):[];
+    data=Array.isArray(data)?data:[];
     // Safety fallback: if a submission was approved but its article row was not created,
     // also expose approved submissions as published works. This does not replace existing articles.
     try{
@@ -1447,18 +1074,26 @@ async function loadArticles(){
         const photoPath=x.published_photo_path||null;
         data.push({
           id:'submission-'+x.id, title:x.title, content:x.submission_method==='file'?'':(x.content||''),
-          category:resolvedArticleCategories({title:x.title,content:x.submission_method==='file'?'':(x.content||''),category:x.category||'',author_name:x.name,author_bio:x.bio||'',submission_method:x.submission_method||''}).join(' | '), author_name:x.name, author_bio:x.bio||'',
+          category:x.category||'अन्य', author_name:x.name, author_bio:x.bio||'',
           author_photo_url:photoPath?publicStorageUrl('published-works',photoPath):null,
           file_url:filePath?publicStorageUrl('published-works',filePath):null,
-          status:'published', created_at:x.created_at, source:'submission'
+          status:'published', created_at:x.created_at
         });
         existing.add(key);
       });
     }catch(fallbackErr){console.warn('Approved submission fallback:',fallbackErr.message);}
     data.sort((a,b)=>new Date(b.created_at||0)-new Date(a.created_at||0));
-    window.kdAllPublishedArticles=data;
-    renderTeamKalamCategoryTiles(); renderTeamKalamSubcategoryPanel(); renderTeamKalamArticles();
-    renderFilteredArticles(); renderAllCategorySectionArticles();
+    if(!data.length){grid.innerHTML='<div class="card"><h3>अभी कोई प्रकाशित रचना नहीं है।</h3><p class="meta">नई स्वीकृत रचनाएँ यहाँ दिखाई देंगी।</p></div>';return;}
+    window.kdArticleStore={};
+    data.forEach(x=>{window.kdArticleStore[String(x.id)]=x;});
+    grid.innerHTML=data.map(x=>{
+      const id=String(x.id||'').replace(/'/g,"\\'");
+      const preview=esc(x.content||'').slice(0,220);
+      const more=(x.content||'').length>220?'...':'';
+      const action=x.file_url?'📎 रचना पढ़ें / देखें':'📖 पूरी रचना पढ़ें';
+      return `<article class="card rachna-card" data-article-id="${esc(String(x.id||''))}">${x.author_photo_url?`<img src="${esc(x.author_photo_url)}" alt="${esc(x.author_name||'रचनाकार')}" style="width:72px;height:72px;border-radius:50%;object-fit:cover">`:'<div style="font-size:42px">📚</div>'}<span class="meta">${esc(x.category||'लेख')} • ${new Date(x.created_at).toLocaleDateString('hi-IN')}</span><h3>${esc(x.title)}</h3><p style="white-space:pre-line">${preview}${more}</p><p class="meta">रचनाकार: ${esc(x.author_name||'कुड़माली धन्धौरा')}</p>${x.author_bio?`<p class="meta">${esc(x.author_bio)}</p>`:''}<p><button class="btn" type="button" onclick="openRachnaItem('${id}')">${action}</button></p><div class="notice" style="margin-top:12px;padding:12px 14px;border-left:3px solid #f28c28;background:#fff8eb;border-radius:8px;font-size:13px;line-height:1.6;color:#5a4630"><b>⚠️ रचना प्रकाशन संबंधी अस्वीकरण:</b> यह रचना रचनाकार द्वारा उपलब्ध कराई गई है। इसका प्रकाशन कुड़माली धन्धौरा/उसकी टीम द्वारा रचना में निहित प्रत्येक तथ्य, दावा, विचार या कथन की सत्यता की पुष्टि नहीं माना जाएगा। रचना की मौलिकता, तथ्यात्मक शुद्धता, अधिकार/अनुमति तथा किसी भी त्रुटि, आपत्ति, अधिकार-संबंधी दावा या विवाद की जिम्मेदारी रचनाकार की होगी। टीम आवश्यकतानुसार रचना को संपादित, रोक या हटाने का अधिकार रखती है।</div><div class="notice" style="margin-top:10px;padding:12px 14px;border-left:3px solid #6b8e23;background:#f4f8ed;border-radius:8px;font-size:13px;line-height:1.6;color:#3d4930"><b>📖 पाठक सूचना / Reader’s Note:</b> यह सामग्री संबंधित रचनाकार द्वारा प्रस्तुत की गई है। इसमें व्यक्त विचार, दावे एवं दृष्टिकोण रचनाकार के अपने हैं और इन्हें कुड़माली धन्धौरा या उसकी टीम की आधिकारिक राय न माना जाए। तथ्यात्मक दावों को पाठक आवश्यकतानुसार स्वतंत्र रूप से परखें।<br><b>English:</b> This work is submitted by the respective author. Its views, opinions and claims are those of the author and are not necessarily the official views of Kudmali Dhandhaura or its team.</div></article>`;
+    }).join('');
+    loadAuthorsFromArticles(data);
   }catch(e){console.error('Articles load error:',e);}
 }
 function loadAuthorsFromArticles(data){
@@ -1469,55 +1104,11 @@ function loadAuthorsFromArticles(data){
   box.innerHTML=authors.map(x=>'<div class="card"><div style="font-size:38px">✍️</div><h3>'+esc(x.name)+'</h3>'+(x.bio?'<p>'+esc(x.bio)+'</p>':'<p class="meta">इस रचनाकार की प्रकाशित सामग्री लेख / ब्लॉग में उपलब्ध है।</p>')+'</div>').join('');
 }
 async function adminLogout(){localStorage.removeItem('kd_auth_session');location.reload();}
-function normalizeSearchText(v){return String(v||'').toLocaleLowerCase('hi-IN').replace(/[|,;/]+/g,' ').replace(/\s+/g,' ').trim();}
-function searchFields(x){return [x.title,x.author_name,x.author_bio,x.category,x.content,x.file_url,x.file_path,x.submission_method].filter(Boolean).map(String);}
-function searchTokens(q){return normalizeSearchText(q).split(/\s+/).filter(Boolean);}
-function searchScore(x,q){
-  const n=normalizeSearchText(q), fields=searchFields(x).map(normalizeSearchText), joined=fields.join(' '), tokens=searchTokens(q);
-  let score=0;
-  if(fields[0]&&fields[0]===n)score+=100; if(fields[1]&&fields[1]===n)score+=90; if(fields[0]&&fields[0].includes(n))score+=50; if(fields[1]&&fields[1].includes(n))score+=45; if(fields[3]&&fields[3].includes(n))score+=40; if(fields[4]&&fields[4].includes(n))score+=20;
-  score+=tokens.filter(t=>joined.includes(t)).length*8;
-  return score;
-}
-function articleMatches(x,q){const n=normalizeSearchText(q);if(!n)return false;const joined=searchFields(x).map(normalizeSearchText).join(' ');return joined.includes(n)||searchTokens(n).every(t=>joined.includes(t));}
-function searchTermsFromData(q){
-  const query=normalizeSearchText(q);if(!query)return [];
-  const rows=window.kdAllPublishedArticles||[]; const pool=[];
-  rows.forEach(x=>{searchFields(x).slice(0,5).forEach(v=>pool.push(String(v).trim()));});
-  Object.entries(KD_CATEGORY_TREE).forEach(([p,subs])=>{pool.push(p,...subs);});
-  document.querySelectorAll('section h2,section h3,[data-content-key]').forEach(el=>{const t=(el.innerText||el.textContent||'').trim();if(t)pool.push(t);});
-  const seen=new Set(),out=[];pool.forEach(v=>{const n=normalizeSearchText(v);if(!n||seen.has(n))return;const ok=n.includes(query)||searchTokens(query).every(t=>n.includes(t));if(!ok)return;seen.add(n);out.push(v);});
-  return out.sort((a,b)=>(normalizeSearchText(a).startsWith(query)?-1:1)-(normalizeSearchText(b).startsWith(query)?-1:1)).slice(0,10);
-}
-function highlightSearch(v,q){const text=esc(v||'');if(!q)return text;const tokens=searchTokens(q).sort((a,b)=>b.length-a.length);let out=text;tokens.forEach(t=>{const re=new RegExp(t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'ig');out=out.replace(re,m=>'<mark>'+m+'</mark>');});return out;}
-function searchStaticSections(q){const n=normalizeSearchText(q);if(!n)return [];const found=[];document.querySelectorAll('section[id]').forEach(s=>{const txt=normalizeSearchText(s.innerText);if(txt.includes(n)||searchTokens(n).every(t=>txt.includes(t))){const h=s.querySelector('h2')?.innerText||s.id;found.push({id:s.id,title:h});}});return found.slice(0,8);}
-function renderSearchSuggestions(q){
-  const box=$('searchSuggestions');if(!box)return;const n=normalizeSearchText(q);if(n.length<2){box.classList.remove('show');box.innerHTML='';return;}
-  const terms=searchTermsFromData(n), arts=(window.kdAllPublishedArticles||[]).filter(x=>articleMatches(x,n)).sort((a,b)=>searchScore(b,n)-searchScore(a,n)).slice(0,7);let html='';
-  terms.slice(0,6).forEach(t=>{const isCat=Object.keys(KD_CATEGORY_TREE).includes(t)||Object.values(KD_CATEGORY_TREE).some(a=>a.includes(t));html+=`<button type="button" class="search-suggest-item" onclick="${isCat?'chooseSearchCategory':'chooseSearchSuggestion'}(${JSON.stringify(t).replace(/</g,'\\u003c')})">${isCat?'📂':'🔎'} <b>${highlightSearch(t,n)}</b><small>${isCat?'श्रेणी / उप-श्रेणी':'Website / database content'}</small></button>`;});
-  arts.forEach(x=>html+=`<button type="button" class="search-suggest-item" onclick="openSearchArticle(${JSON.stringify(String(x.id))})">📖 <b>${highlightSearch(x.title||'रचना',n)}</b><small>${esc(x.category||'लेख')} • रचनाकार: ${esc(x.author_name||'')}</small></button>`);
-  if(!html)html='<div class="search-suggest-item" style="cursor:default">कोई संबंधित शब्द, रचनाकार, रचना या श्रेणी नहीं मिली।</div>';
-  box.innerHTML=html;box.classList.add('show');
-}
-function chooseSearchSuggestion(t){$('search').value=t;searchSite();}
-function chooseSearchCategory(t){navigateByArticleCategory(t);$('search').value=t;$('searchSuggestions')?.classList.remove('show');}
-function goToSearchSection(id){closeSearchResults();$('searchSuggestions')?.classList.remove('show');const el=$(id);if(el){el.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+id);}}
-function openSearchArticle(id){const item=(window.kdAllPublishedArticles||[]).find(x=>String(x.id)===String(id));if(!item)return;window.kdArticleStore[String(id)]=item;closeSearchResults();$('searchSuggestions')?.classList.remove('show');openRachnaItem(String(id));}
-function renderSearchResults(q){
-  const body=$('searchResultsBody'),modal=$('searchResults'),back=$('searchBackdrop');if(!body||!modal||!back)return;const n=normalizeSearchText(q);
-  const arts=(window.kdAllPublishedArticles||[]).filter(x=>articleMatches(x,n)).sort((a,b)=>searchScore(b,n)-searchScore(a,n));const sections=searchStaticSections(n);
-  $('searchResultsTitle').textContent=`🔎 “${q}” के खोज परिणाम`;let html='';
-  if(arts.length){html+=`<div class="meta" style="margin-bottom:8px">📚 ${arts.length} संबंधित प्रकाशित लेख / रचना मिली। खोज शीर्षक, रचनाकार, विधा/श्रेणी, उप-श्रेणी, सामग्री और उपलब्ध document जानकारी में हुई है।</div>`;arts.slice(0,50).forEach(x=>{const id=String(x.id||''),preview=String(x.content||'').replace(/\s+/g,' ').trim().slice(0,240),tags=articleCategories(x.category).map(c=>'<span class="article-category-tag">'+highlightSearch(c,q)+'</span>').join('');html+=`<div class="search-result-card"><div class="meta">${esc(x.category||'लेख')} • ${x.created_at?new Date(x.created_at).toLocaleDateString('hi-IN'):''}</div><h4>${highlightSearch(x.title||'रचना',q)}</h4><p class="meta">रचनाकार: ${highlightSearch(x.author_name||'कुड़माली धन्धौरा',q)}</p><div class="article-category-tags">${tags}</div>${preview?`<p>${highlightSearch(preview,q)}${String(x.content||'').length>240?'…':''}</p>`:''}<button type="button" class="btn" onclick="openSearchArticle(${JSON.stringify(id)})">📖 पूरी रचना खोलें →</button>${x.file_url?` <button type="button" class="btn" style="background:#075b38" onclick="openSearchArticle(${JSON.stringify(id)})">📎 Document देखें</button>`:''}</div>`;});}
-  if(sections.length){html+=`<div class="meta" style="margin:14px 0 8px">📂 Website के संबंधित हिस्से</div>`;sections.forEach(x=>html+=`<div class="search-result-card"><h4>${highlightSearch(x.title,n)}</h4><button type="button" class="btn" onclick="goToSearchSection(${JSON.stringify(x.id)})">इस हिस्से पर जाएँ →</button></div>`);}
-  if(!html)html='<div class="search-empty">😕 इस शब्द से कोई लेख, रचनाकार, document, श्रेणी या website section नहीं मिला। दूसरा शब्द या नाम लिखकर देखें।</div>';body.innerHTML=html;modal.classList.add('show');back.classList.add('show');$('searchSuggestions')?.classList.remove('show');
-}
-function closeSearchResults(){$('searchResults')?.classList.remove('show');$('searchBackdrop')?.classList.remove('show');}
-function searchSite(){const q=$('search').value.trim();if(!q)return;renderSearchResults(q);}
+function searchSite(){const q=$('search').value.trim();if(q)document.querySelectorAll('section').forEach(s=>{if(s.innerText.includes(q))s.scrollIntoView({behavior:'smooth'});});}
 
 document.querySelectorAll('nav a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href').slice(1),target=document.getElementById(id);if(!target)return;e.preventDefault();history.replaceState(null,'','#'+id);target.scrollIntoView({behavior:'smooth',block:'start'});}));
-document.querySelectorAll('#articleCategoryFilter [data-filter-category]').forEach(b=>b.addEventListener('click',()=>setArticleFilter(b.dataset.filterCategory,true)));
-document.querySelectorAll('[data-category-tile]').forEach(t=>{const go=()=>{const cat=t.dataset.categoryTile;if(cat==='आपन रचना भेजा'){document.getElementById('submit')?.scrollIntoView({behavior:'smooth',block:'start'});return;}setArticleFilter(cat,false);renderAllCategorySectionArticles();const ids={'कुड़माली भाषा':'language','शिक्षा':'education','संस्कृति':'culture','लेख / ब्लॉग':'blog','संसाधन':'resources','समाज':'society','लोक-साहित्य':'folk-literature','शोध':'research'};document.getElementById(ids[cat]||'blog')?.scrollIntoView({behavior:'smooth',block:'start'});};t.addEventListener('click',go);t.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});});
 document.querySelectorAll('.admin-stat-btn[data-admin-target]').forEach(btn=>btn.addEventListener('click',()=>{const target=document.getElementById(btn.dataset.adminTarget);if(target)target.scrollIntoView({behavior:'smooth',block:'start'});}));
+
 
 window.addEventListener('load',async()=>{
   const savedName=localStorage.getItem('kd_name')||'';
@@ -1525,8 +1116,9 @@ window.addEventListener('load',async()=>{
   if($('chatName'))$('chatName').value=savedName;
   const ok=await ensureSession();
   if(ok){
+    await trackVisitor();
     if($('suggestStatus'))$('suggestStatus').textContent='🟢 Connected';
-    await loadSiteContent(); await loadCultureGlimpses(); await loadSuggestions();await loadArticles();renderSubcategoryPanel();await loadAcademicCommunity();
+    await loadSiteContent(); await loadCultureGlimpses(); await loadSuggestions();await loadArticles(); if(isRachnaPath()) setTimeout(openPermanentRachnaFromPath,50); await loadAcademicCommunity();
     if(isAdmin) await loadAdminContent();
     if(location.hash){setTimeout(()=>{const target=document.getElementById(location.hash.slice(1));if(target)target.scrollIntoView({behavior:'smooth',block:'start'});},80);}
   }
@@ -1549,9 +1141,7 @@ $('adminChatSendReply')?.addEventListener('click',sendAdminChatReply);
 $('adminChatRefresh')?.addEventListener('click',()=>currentAdminChatId?loadAdminConversation(currentAdminChatId):loadAdminChatCenter());
 $('saveContent').addEventListener('click',saveSiteContent);
 $('newContent').addEventListener('click',newSiteContent);
-$('contentType').addEventListener('change',e=>renderContentEditorType(e.target.value));
-$('contentImageFile').addEventListener('change',e=>{const f=e.target.files?.[0];if(!f){$('contentImagePreviewWrap').style.display='none';return;}const u=URL.createObjectURL(f);$('contentImagePreview').src=u;$('contentImagePreviewWrap').style.display='block';});
-$('search').addEventListener('input',e=>renderSearchSuggestions(e.target.value)); $('search').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchSite();} if(e.key==='Escape'){closeSearchResults();$('searchSuggestions')?.classList.remove('show');}}); document.addEventListener('click',e=>{if(!e.target.closest('.search-wrap'))$('searchSuggestions')?.classList.remove('show');});
+$('search').addEventListener('keydown',e=>{if(e.key==='Enter')searchSite();});
 window.adminLogin=adminLogin;window.openAdminChat=openAdminChat;window.deleteSuggestion=deleteSuggestion;window.openAdminChat=openAdminChat;window.saveCultureGlimpse=saveCultureGlimpse;window.sendPeerRequest=sendPeerRequest;window.respondPeerRequest=respondPeerRequest;window.openPeerChat=openPeerChat;window.viewAdminPeerChat=viewAdminPeerChat;window.selectContentForEdit=selectContentForEdit;window.approveSubmission=approveSubmission;window.rejectSubmission=rejectSubmission;window.saveSiteContent=saveSiteContent;window.newSiteContent=newSiteContent;
 </script>
 
@@ -1569,15 +1159,7 @@ window.adminLogin=adminLogin;window.openAdminChat=openAdminChat;window.deleteSug
     {name:'लोकनृत्य आ मांदर',url:svg(`<path d="M0 650 Q350 520 700 650 T1600 620 V900 H0Z" fill="#12382a"/><circle cx="800" cy="180" r="110" fill="#f3b34e"/><g stroke="#f2cf79" stroke-width="22" fill="none"><path d="M620 650q-80-230 80-310q160 80 80 310"/><path d="M980 650q80-230-80-310q-160 80-80 310"/><path d="M560 480l-170-110M1040 480l170-110"/></g><ellipse cx="800" cy="450" rx="70" ry="110" fill="#a95027" stroke="#f3cf78" stroke-width="14"/><path d="M735 450h130M800 350v200" stroke="#f3cf78" stroke-width="9"/>`,'#173f31')}
   ];
   let i=0;
-  function setBg(n){
-    i=n%scenes.length;
-    const customBg=window.kdCustomBackgroundImage||'';
-    const customHero=window.kdCustomHeroImage||'';
-    if(!customBg) document.documentElement.style.setProperty('--kd-bg-image',`url("${scenes[i].url}")`);
-    if(!customHero) document.documentElement.style.setProperty('--kd-hero-bg',`url("${scenes[i].url}")`);
-    const b=document.getElementById('kdBgBadge');
-    if(b)b.textContent=customBg?'🖼️ Admin चुनी हुई Website Image':('🌿 '+scenes[i].name+' • हर 10 सेकंड नई छवि');
-  }
+  function setBg(n){i=n%scenes.length;document.documentElement.style.setProperty('--kd-bg-image',`url("${scenes[i].url}")`);document.documentElement.style.setProperty('--kd-hero-bg',`url("${scenes[i].url}")`);const b=document.getElementById('kdBgBadge');if(b)b.textContent='🌿 '+scenes[i].name+' • हर 10 सेकंड नई छवि';}
   setBg(0); setInterval(()=>setBg(i+1),10000);
 })();
 </script>
@@ -1755,8 +1337,7 @@ function getRachnaText(item){
 function printRachna(){
   const item=pendingRachnaItem; if(!item)return;
   const w=window.open('','_blank','noopener'); if(!w)return;
-  const body=esc(getRachnaText(item)).replace(/
-/g,'<br>');
+  const body=esc(getRachnaText(item)).replace(/\n/g,'<br>');
   w.document.write('<!doctype html><html lang="hi"><head><meta charset="utf-8"><title>'+esc(item.title||'रचना')+'</title><style>body{font-family:system-ui,sans-serif;max-width:850px;margin:40px auto;padding:20px;line-height:1.9}h1{color:#165c43}</style></head><body><h1>'+esc(item.title||'रचना')+'</h1><p><b>रचनाकार:</b> '+esc(item.author_name||'')+'</p><hr><div>'+body+'</div><script>window.print()<\/script></body></html>');
   w.document.close();
 }
@@ -1786,30 +1367,110 @@ async function aiConvertRachna(mode){
 }
 function closeRachnaReader(){const m=document.getElementById('rachnaReaderModal');if(m)m.classList.remove('show');document.body.style.overflow='';pendingRachnaItem=null;}
 window.addEventListener('keydown',e=>{if(e.key==='Escape'){closeReaderDisclaimer();closeRachnaReader();}});
-</script>
-<script>
-function toggleAITools(){const m=document.getElementById('aiToolsMenu');if(m)m.classList.toggle('show');}
-function openAITool(name,url){
-  const item=window.pendingRachnaItem||null;
-  let prompt='';
-  if(item) prompt='इस रचना को समझने में मेरी मदद करें। शीर्षक: '+(item.title||'रचना')+'। लेखक: '+(item.author_name||'अज्ञात')+'। वेबसाइट: कुड़माली धन्धौरा। कृपया इस रचना के मुख्य विषय, सारांश, महत्वपूर्ण विचार और कठिन शब्द समझाइए।';
-  const note=document.getElementById('aiToolsNote');
-  if(prompt && navigator.clipboard?.writeText){navigator.clipboard.writeText(prompt).then(()=>{if(note)note.textContent='✅ रचना-संबंधी prompt copy हो गया। '+name+' खुल रहा है…';}).catch(()=>{});}
-  window.open(url,'_blank','noopener');
-  const m=document.getElementById('aiToolsMenu');if(m)m.classList.remove('show');
+
+// ===== Permanent Rachna URL / SEO =====
+function rachnaPermalink(id){
+  return 'https://kurmali.co.in/rachna/'+encodeURIComponent(String(id));
 }
-document.addEventListener('click',e=>{const w=document.getElementById('aiToolsFloat');if(w&&!w.contains(e.target)){const m=document.getElementById('aiToolsMenu');if(m)m.classList.remove('show');}});
-</script>
-<div class="ai-tools-float" id="aiToolsFloat"><div class="ai-tools-menu" id="aiToolsMenu" role="menu" aria-label="AI Tools"><h4>🤖 उपयोगी AI Tools</h4><button class="ai-tool-link" onclick="openAITool('ChatGPT','https://chatgpt.com/')"><span class="ai-ico">💬</span>ChatGPT</button><button class="ai-tool-link" onclick="openAITool('Gemini','https://gemini.google.com/')"><span class="ai-ico">✨</span>Google Gemini</button><button class="ai-tool-link" onclick="openAITool('Claude','https://claude.ai/')"><span class="ai-ico">🧠</span>Claude</button><button class="ai-tool-link" onclick="openAITool('Perplexity','https://www.perplexity.ai/')"><span class="ai-ico">🔎</span>Perplexity</button><button class="ai-tool-link" onclick="openAITool('Copilot','https://copilot.microsoft.com/')"><span class="ai-ico">🪟</span>Microsoft Copilot</button><button class="ai-tool-link" onclick="openAITool('Grok','https://grok.com/')"><span class="ai-ico">⚡</span>Grok</button><button class="ai-tool-link" onclick="openAITool('DeepSeek','https://chat.deepseek.com/')"><span class="ai-ico">🔬</span>DeepSeek</button><button class="ai-tool-link" onclick="openAITool('Mistral','https://chat.mistral.ai/')"><span class="ai-ico">🌬️</span>Mistral Le Chat</button><div class="ai-tools-note" id="aiToolsNote">रचना खुली हो तो AI चुनने पर रचना के बारे में पूछने वाला prompt copy करने की कोशिश होगी।</div></div><button class="ai-tools-main" type="button" onclick="toggleAITools()" aria-label="AI Tools">🤖</button></div>
-<script>
-/* Fresh Visit Experience */
-(function(){const K='kd_fresh_visit_v2';function esc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}function data(){return Object.values(window.kdArticleStore||{}).filter(x=>x&&x.id)}function rng(){let x=0;const raw=(sessionStorage.getItem(K)||'')+'|'+location.pathname+'|'+new Date().toISOString().slice(0,10);for(let i=0;i<raw.length;i++)x=(Math.imul(x^raw.charCodeAt(i),16777619))>>>0;return()=>{x^=x<<13;x^=x>>>17;x^=x<<5;return((x>>>0)%1000000)/1000000}}function sh(a,r){a=a.slice();for(let i=a.length-1;i>0;i--){let j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}function open(id){if(typeof openRachnaItem==='function')openRachnaItem(String(id))}function card(x){return '<article class="card" data-fresh-id="'+esc(x.id)+'" tabindex="0" role="button"><div style="font-size:34px">📖</div><span class="meta">'+esc(x.category||'रचना')+'</span><h3>'+esc(x.title||'बिना शीर्षक')+'</h3><p>'+esc(String(x.content||'').replace(/\s+/g,' ').slice(0,180))+(String(x.content||'').length>180?'…':'')+'</p><p class="meta">रचनाकार: '+esc(x.author_name||'कुड़माली धन्धौरा')+'</p><button class="btn" type="button">पूरी रचना पढ़ें →</button></article>'}function render(){let d=data();if(!d.length){['freshToday','freshRecommendations'].forEach(id=>{let e=document.getElementById(id);if(e)e.style.display='none'});return}let r=rng(),a=sh(d,r),f=a[0],rec=a.slice(1,5),date=document.getElementById('freshTodayDate');if(date)date.textContent=new Date().toLocaleDateString('hi-IN',{day:'numeric',month:'long',year:'numeric'});let fc=document.getElementById('freshFeaturedCard');if(fc){fc.innerHTML='<div style="font-size:42px">🖋️</div><div class="fresh-kicker">आज की विशेष रचना</div><h3>'+esc(f.title)+'</h3><p>'+esc(String(f.content||'').replace(/\s+/g,' ').slice(0,300))+(String(f.content||'').length>300?'…':'')+'</p><p class="meta">रचनाकार: '+esc(f.author_name||'कुड़माली धन्धौरा')+'</p><button class="btn" type="button">रचना खोलें →</button>';fc.onclick=()=>open(f.id)}let g=document.getElementById('freshRecommendationGrid');if(g){g.innerHTML=rec.length?rec.map(card).join(''):'<div class="card"><p class="meta">और रचनाएँ शीघ्र उपलब्ध होंगी।</p></div>';g.querySelectorAll('[data-fresh-id]').forEach(e=>{let id=e.dataset.freshId;e.onclick=()=>open(id);e.onkeydown=q=>{if(q.key==='Enter'||q.key===' '){q.preventDefault();open(id)}}})}}window.kdRenderFreshVisit=render;document.addEventListener('DOMContentLoaded',()=>{let n=Number(sessionStorage.getItem(K+'_count')||0)+1;sessionStorage.setItem(K+'_count',String(n));let b=document.createElement('div');b.className='fresh-visit-banner';b.innerHTML='🌿 <b>स्वागत है!</b> आज आपके लिए वेबसाइट की चुनिंदा सामग्री का क्रम अलग रखा गया है।';(document.querySelector('main')||document.body).prepend(b);setTimeout(render,900)})})();
-/* Visitor counter: every page open/refresh = one Visit. */
-(function kdVisitorBoot(){
-  const run=()=>{ if(window.__kdVisitorTracked)return; window.__kdVisitorTracked=true; trackVisitor(); };
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',run,{once:true});
-  else run();
-})();
+function articleIdFromPath(){
+  const m=window.location.pathname.match(/^\/rachna\/([^/]+)\/?$/i);
+  if(!m)return null;
+  let id=decodeURIComponent(m[1]);
+  if(id.startsWith('submission-')) id=id.slice('submission-'.length);
+  return id;
+}
+function isRachnaPath(){ return !!articleIdFromPath(); }
+
+function setRachnaMeta(selector, attr, key, value){
+  let el=document.querySelector(selector);
+  if(!el){
+    el=document.createElement('meta');
+    el.setAttribute(attr,key);
+    document.head.appendChild(el);
+  }
+  el.content=value;
+}
+function updateRachnaSeo(item){
+  if(!item)return;
+  const title=(item.title||'रचना')+' | कुड़माली धन्धौरा';
+  const desc=String(item.content||'').replace(/\s+/g,' ').trim().slice(0,155) || 'कुड़माली धन्धौरा पर प्रकाशित रचना।';
+  const url=rachnaPermalink(item.id);
+  document.title=title;
+  let canonical=document.querySelector('link[rel="canonical"]');
+  if(!canonical){
+    canonical=document.createElement('link');
+    canonical.rel='canonical';
+    document.head.appendChild(canonical);
+  }
+  canonical.href=url;
+  setRachnaMeta('meta[name="description"]','name','description',desc);
+  setRachnaMeta('meta[property="og:title"]','property','og:title',title);
+  setRachnaMeta('meta[property="og:description"]','property','og:description',desc);
+  setRachnaMeta('meta[property="og:url"]','property','og:url',url);
+}
+function restoreHomeSeo(){
+  document.title='कुड़माली धन्धौरा | राढ़ माटिक माई भाषा कुड़माली';
+  let canonical=document.querySelector('link[rel="canonical"]');
+  if(canonical)canonical.href='https://kurmali.co.in/';
+  const d=document.querySelector('meta[name="description"]');
+  if(d)d.content='कुड़माली धन्धौरा — राढ़ माटिक माई भाषा कुड़माली। एहे हामर पहचान, एहे हामर बोली। हामर समाज के ज्ञान, साहित्य, संस्कृति आ जागरण कर एकटा मंच।';
+  const og=document.querySelector('meta[property="og:url"]');
+  if(og)og.content='https://kurmali.co.in/';
+}
+function openPermanentRachnaFromPath(){
+  const id=articleIdFromPath();
+  if(!id)return false;
+  const item=window.kdArticleStore?.[String(id)];
+  if(!item)return false;
+  updateRachnaSeo(item);
+  openRachnaItem(id);
+  return true;
+}
+
+// Replace the original reader opener with a URL-aware wrapper.
+if(typeof window.openRachnaItem==='function'){
+  const originalOpenRachnaItem=window.openRachnaItem;
+  window.openRachnaItem=function(id){
+    const item=window.kdArticleStore?.[String(id)];
+    if(!item)return;
+    if(!isRachnaPath() || String(articleIdFromPath())!==String(id)){
+      history.pushState({rachnaId:String(id)},'', '/rachna/'+encodeURIComponent(String(id)));
+      updateRachnaSeo(item);
+    }
+    originalOpenRachnaItem(id);
+  };
+}
+
+// Restore the home URL when the reader is closed.
+if(typeof window.closeRachnaReader==='function'){
+  const originalCloseRachnaReader=window.closeRachnaReader;
+  window.closeRachnaReader=function(){
+    originalCloseRachnaReader();
+    if(isRachnaPath()){
+      history.pushState({},'', '/');
+      restoreHomeSeo();
+    }
+  };
+}
+
+window.addEventListener('popstate',()=>{
+  const id=articleIdFromPath();
+  if(id){
+    if(window.kdArticleStore?.[String(id)]) openPermanentRachnaFromPath();
+    else setTimeout(openPermanentRachnaFromPath,300);
+  }else{
+    restoreHomeSeo();
+    const m=document.getElementById('rachnaReaderModal');
+    if(m)m.classList.remove('show');
+    document.body.style.overflow='';
+  }
+});
+
+// Direct /rachna/ID navigation after the initial data load.
+if(isRachnaPath()){
+  const tryOpen=()=>{ if(!openPermanentRachnaFromPath()) setTimeout(tryOpen,250); };
+  window.addEventListener('load',()=>setTimeout(tryOpen,100));
+}
 
 </script>
 </body>
