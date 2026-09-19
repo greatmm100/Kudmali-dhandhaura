@@ -1245,8 +1245,11 @@ async function refreshAdmin(){
       dbCount('profiles','?select=id&academic_verified=eq.true')
     ]);
     ['statUsers','statArticles','statSubmissions','statSuggestions','statChats','statAcademic'].forEach((id,i)=>$(id).textContent=counts[i]);
-    const published=await dbRequest('articles',{query:'?select=*&status=eq.published&order=created_at.desc&limit=100'}).catch(()=>[]);
-    $('adminArticles').innerHTML=(published||[]).map(x=>`<div class="card" style="margin:8px 0;padding:12px"><h3>📝 ${esc(x.title||'Untitled')}</h3><p class="meta">${esc(x.category||'अन्य')} • ${esc(x.author_name||'')}</p><p>${esc((x.content||'').slice(0,500)).replace(/\n/g,'<br>')}${(x.content||'').length>500?'…':''}</p>${x.file_url?`<p>📎 <a href="${esc(x.file_url)}" target="_blank" rel="noopener">Published file खोलें</a></p>`:''}<div class="admin-actions" style="margin-top:10px;display:flex;gap:7px;flex-wrap:wrap"><button class="btn" onclick="adminOpenArticle(${JSON.stringify(String(x.id))})">📖 पूरी रचना</button><button class="btn" onclick="adminSetArticleAndCopy(${JSON.stringify(String(x.id))})">📋 Copy</button><button class="btn" onclick="adminSetArticleAndPrint(${JSON.stringify(String(x.id))})">🖨️ Print</button><button class="btn" onclick="adminSetArticleAndDownload(${JSON.stringify(String(x.id))})">⬇️ Download</button><button class="btn" onclick="adminSetArticleAndShare(${JSON.stringify(String(x.id))})">🔗 Share</button><button class="btn" onclick="adminEditArticle(${JSON.stringify(String(x.id))})">✏️ Edit</button><button class="btn" onclick="adminOpenInfographic(${JSON.stringify(String(x.id))})">🎨 Infographic</button><button class="btn" style="background:#b9770e" onclick="adminRemoveArticle(${JSON.stringify(String(x.id))})">🚫 Remove</button><button class="btn" style="background:#a33" onclick="adminDeleteArticle(${JSON.stringify(String(x.id))})">🗑️ Delete</button></div><span class="meta">${x.created_at?new Date(x.created_at).toLocaleString('hi-IN'):''}</span></div>`).join('')||'<div class="meta">अभी कोई published article नहीं।</div>';
+    const published=await dbRequest('articles',{query:'?select=*&status=eq.published&order=created_at.desc'}).catch(()=>[]);
+    // Keep the complete article objects available to Admin actions as well.
+    window.kdArticleStore=window.kdArticleStore||{};
+    (published||[]).forEach(x=>{ if(x && x.id!==undefined) window.kdArticleStore[String(x.id)]=x; });
+    $('adminArticles').innerHTML=(published||[]).map(x=>`<div class="card" style="margin:8px 0;padding:12px"><h3>📝 ${esc(x.title||'Untitled')}</h3><p class="meta">${esc(x.category||'अन्य')} • ${esc(x.author_name||'')}</p><p>${esc((x.content||'').slice(0,900)).replace(/\n/g,'<br>')}${(x.content||'').length>500?'…':''}</p>${x.file_url?`<p>📎 <a href="${esc(x.file_url)}" target="_blank" rel="noopener">Published file खोलें</a></p>`:''}<div class="admin-actions" style="margin-top:10px;display:flex;gap:7px;flex-wrap:wrap"><button class="btn" onclick="adminOpenArticle(${JSON.stringify(String(x.id))})">📖 पूरी रचना</button><button class="btn" onclick="adminSetArticleAndCopy(${JSON.stringify(String(x.id))})">📋 Copy</button><button class="btn" onclick="adminSetArticleAndPrint(${JSON.stringify(String(x.id))})">🖨️ Print</button><button class="btn" onclick="adminSetArticleAndDownload(${JSON.stringify(String(x.id))})">⬇️ Download</button><button class="btn" onclick="adminSetArticleAndShare(${JSON.stringify(String(x.id))})">🔗 Share</button><button class="btn" onclick="adminEditArticle(${JSON.stringify(String(x.id))})">✏️ Edit</button><button class="btn" onclick="adminOpenInfographic(${JSON.stringify(String(x.id))})">🎨 Infographic</button><button class="btn" style="background:#b9770e" onclick="adminRemoveArticle(${JSON.stringify(String(x.id))})">🚫 Remove</button><button class="btn" style="background:#a33" onclick="adminDeleteArticle(${JSON.stringify(String(x.id))})">🗑️ Delete</button></div><span class="meta">${x.created_at?new Date(x.created_at).toLocaleString('hi-IN'):''}</span></div>`).join('')||'<div class="meta">अभी कोई published article नहीं।</div>';
     await loadAdminInfographicList(published||[]);
     await loadVisitorAnalytics();
     const academic=await dbRequest('profiles',{query:'?select=id,user_id,name,email,phone,academic_role,institution,research_area,about,email_verified,academic_verified,created_at&academic_role=not.is.null&order=created_at.desc&limit=100'}).catch(()=>[]);
@@ -1266,9 +1269,23 @@ async function deleteSuggestion(id){if(!confirm('यह public message हटा
 let adminEditingArticleId=null, adminEditingIgId=null;
 function adminArticleById(id){return window.kdArticleStore?.[String(id)]||null;}
 async function adminOpenArticle(id){
-  if(!isAdmin)return; const rows=await dbRequest('articles',{query:'?select=*&id=eq.'+encodeURIComponent(id)+'&limit=1'}).catch(()=>[]); const x=rows?.[0]; if(!x){alert('रचना नहीं मिली।');return;}
-  const w=window.open('','_blank','noopener'); if(!w){alert('Browser ने नया window रोका है।');return;}
-  const text=esc(x.content||'').replace(/\n/g,'<br>'); w.document.write('<!doctype html><html lang="hi"><head><meta charset="utf-8"><title>'+esc(x.title||'रचना')+'</title><style>body{font-family:system-ui,sans-serif;max-width:1000px;margin:20px auto;padding:24px;line-height:1.9}pre{white-space:pre-wrap;font:inherit}</style></head><body><h1>'+esc(x.title||'')+'</h1><p><b>रचनाकार:</b> '+esc(x.author_name||'')+'</p><p><b>श्रेणी:</b> '+esc(x.category||'')+'</p><hr><pre>'+text+'</pre></body></html>');w.document.close();
+  if(!isAdmin)return;
+  // Do not depend on a new browser tab: mobile browsers often block window.open.
+  // Fetch the complete row and open it in the site's full reader modal instead.
+  const rows=await dbRequest('articles',{query:'?select=*&id=eq.'+encodeURIComponent(id)+'&limit=1'}).catch(()=>[]);
+  const x=rows?.[0];
+  if(!x){alert('रचना नहीं मिली।');return;}
+  window.kdArticleStore=window.kdArticleStore||{};
+  window.kdArticleStore[String(x.id)]=x;
+  pendingRachnaItem=x;
+  pendingRachnaUrl=x.file_url||'';
+  if(typeof openFullRachna==='function'){
+    openFullRachna(x);
+  }else if(typeof openRachnaItem==='function'){
+    openRachnaItem(String(x.id));
+  }else{
+    alert('रचना Reader उपलब्ध नहीं है।');
+  }
 }
 function adminEditArticle(id){
   const x=adminArticleById(id); if(!x){alert('पहले Refresh करके published रचनाएँ लोड करें।');return;} adminEditingArticleId=String(id);
@@ -1344,12 +1361,12 @@ async function loadArticles(){
   try{
     const grid=document.querySelector('#blog .grid');if(!grid)return;
     // Load a large history so an older published work does not disappear after new posts.
-    let data=await dbRequest('articles',{query:'?select=*&status=eq.published&order=created_at.desc&limit=1000'});
+    let data=await dbRequest('articles',{query:'?select=*&status=eq.published&order=created_at.desc'});
     data=Array.isArray(data)?data:[];
     // Safety fallback: if a submission was approved but its article row was not created,
     // also expose approved submissions as published works. This does not replace existing articles.
     try{
-      const approved=await dbRequest('submissions',{query:'?select=*&status=eq.approved&order=created_at.desc&limit=1000'});
+      const approved=await dbRequest('submissions',{query:'?select=*&status=eq.approved&order=created_at.desc'});
       const existing=new Set(data.map(x=>String(x.title||'').trim().toLowerCase()));
       (approved||[]).forEach(x=>{
         const key=String(x.title||'').trim().toLowerCase();
