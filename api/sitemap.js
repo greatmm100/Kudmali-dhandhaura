@@ -2,7 +2,7 @@ export default async function handler(req, res) {
   const SUPABASE_URL = process.env.SUPABASE_URL;
   const SUPABASE_KEY = process.env.SUPABASE_SECRET_KEY;
 
-  const baseUrl = "https://kurmali.co.in";
+  const baseUrl = "https://www.kurmali.co.in";
 
   try {
     if (!SUPABASE_URL || !SUPABASE_KEY) {
