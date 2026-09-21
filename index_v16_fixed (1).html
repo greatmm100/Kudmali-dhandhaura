@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="kuq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कुड़माली धन्धौरा - Admin & Portal</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .tile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .tile {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .tile:hover {
+            background: #f1f1f1;
+            border-color: var(--accent-color);
+        }
+        .admin-panel {
+            margin-top: 30px;
+            padding: 15px;
+            background: #eef2f3;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>कुड़माली धन्धौरा पोर्टल</h1>
+        <p>Frontend & Admin Management Panel</p>
+    </header>
+
+    <div class="container">
+        <h2>मुख्य विकल्प</h2>
+        <div class="tile-grid">
+            <!-- Fixed: Removed duplicate onclick attributes -->
+            <div class="tile" id="infographicTile" onclick="openInfographicDirectory()">
+                <h3>इन्फोग्राफिक डायरेक्टरी</h3>
+                <p>सभी पोस्टर्स और ग्राफिक्स देखें</p>
+            </div>
+            <div class="tile" onclick="openSubmissionPortal()">
+                <h3>रचना सबमिशन</h3>
+                <p>अपनी नई रचनाएँ अपलोड करें</p>
+            </div>
+            <div class="tile" onclick="openCommunity()">
+                <h3>एकेडमिक कम्युनिटी</h3>
+                <p>चर्चा और संवाद मंच</p>
+            </div>
+        </div>
+
+        <div class="admin-panel" id="adminPanel">
+            <h3>एडमिन नियंत्रण कक्ष</h3>
+            <p>सिस्टम सेटिंग्स और डेटा अपलोड मैनेज करने के लिए विकल्प नीचे दिए गए हैं।</p>
+            <button onclick="initializeAdminMode()">एडमिन मोड चालू करें</button>
+        </div>
+    </div>
+
+    <script>
+        // Global variables and configurations
+        const SUPABASE_URL = "https://your-supabase-url.supabase.co";
+        const SUPABASE_KEY = "your-anon-key";
+        let authSession = null;
+
+        // Navigation and UI Functions
+        function openInfographicDirectory() {
+            console.log("इन्फोग्राफिक डायरेक्टरी खोली जा रही है...");
+            alert("इन्फोग्राफिक डायरेक्टरी मॉड्यूल जल्द लोड होगा।");
+        }
+
+        function openSubmissionPortal() {
+            console.log("सबमिशन पोर्टल खोला जा रहा है...");
+        }
+
+        function openCommunity() {
+            console.log("कम्युनिटी पेज खोला जा रहा है...");
+        }
+
+        function initializeAdminMode() {
+            console.log("एडमिन मोड सक्रिय किया गया।");
+            alert("एडमिन मोड एक्टिवेट हो गया है।");
+        }
+
+        // Fixed & Completed: Supabase Storage Upload Function with Error Handling
+        async function storageUpload(bucket, path, file) {
+            try {
+                const formData = new FormData();
+                formData.append('file', file);
+                
+                const response = await fetch(`${SUPABASE_URL}/storage/v1/object/${bucket}/${path}`, {
+                    method: 'POST',
+                    headers: { 
+                        'Authorization': 'Bearer ' + (authSession?.access_token || SUPABASE_KEY), 
+                        'apikey': SUPABASE_KEY 
+                    },
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error(`अपलोड विफल हुआ: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                return { success: true, data: result };
+            } catch (error) {
+                console.error("स्टोरेज अपलोड त्रुटि:", error);
+                return { success: false, error: error.message };
+            }
+        }
+    </script>
+</body>
+</html>
