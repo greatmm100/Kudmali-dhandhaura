@@ -3048,6 +3048,238 @@ window.kdFinalCommunityRefresh=async()=>{await kdAcadRefresh();await kdLoadDirec
 
 })();
 </script>
+<!-- ===== KD ADD-ON START (v6 + v7 merged) ===== -->
+<style id="kd-v6-style">
+.tile{cursor:pointer;transition:.18s}
+.tile:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(23,74,50,.18)}
+.tile:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.footergrid a:hover{text-decoration:underline}
+.kdr-note{padding:12px 14px;border-left:4px solid #2d8a61;background:#f3fbf6;border-radius:10px;line-height:1.7;margin:10px 0}
+.kdr-warn{border-left-color:#f28c28;background:#fff8eb}
+.kdr-err{border-left-color:#a52834;background:#fdecee}
+.kdr-step{border:1px solid #e3d7c4;border-radius:12px;padding:14px;margin:12px 0;background:#fffdf7}
+#submissionForm.kdr-locked{opacity:.4;pointer-events:none}
+.kd-tab-off{display:none!important}
+.kda-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
+.kda-tab{border:1px solid #d9e2dc;background:#fff;color:var(--green);font:inherit;font-weight:800;padding:10px 14px;border-radius:999px;cursor:pointer}
+.kda-tab.on{background:var(--green);color:#fff;border-color:var(--green)}
+.kda-bar{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.kda-bar input,.kda-bar select{padding:10px;border:1px solid #d9e2dc;border-radius:9px;font:inherit}
+.kda-bar input{flex:1;min-width:190px}
+.kda-mini{padding:7px 12px!important;font-size:13px}
+.kda-wrap{overflow:auto}
+.kda-chat{display:grid;grid-template-columns:minmax(240px,330px) 1fr;gap:14px;align-items:start}
+.kda-list{max-height:640px;overflow:auto}
+.kda-item{padding:10px 12px;margin:0 0 8px;border:1px solid #e3d7c4;border-radius:12px;background:#fff;cursor:pointer}
+.kda-item:hover{box-shadow:0 6px 18px #0001}
+.kda-item.on{border-color:#2d8a61;background:#f3fbf6}
+.kda-msgs{display:flex;flex-direction:column;gap:8px;max-height:400px;overflow:auto;margin:12px 0;padding:8px;background:#f7faf7;border-radius:12px}
+.kda-b{max-width:85%;padding:9px 12px;border-radius:12px;white-space:pre-wrap;word-break:break-word}
+.kda-b.u{align-self:flex-start;background:#fff;border:1px solid #e3e3e3}
+.kda-b.a{align-self:flex-end;background:#e2f4ea}
+.kda-photo{width:84px;height:84px;border-radius:50%;background:#e8eee9;display:grid;place-items:center;font-size:34px;overflow:hidden;flex:0 0 auto}
+.kda-reg{display:flex;gap:12px;flex-wrap:wrap;padding:10px;border:1px solid #e3d7c4;border-radius:12px;background:#fff;margin:8px 0}
+@media(max-width:800px){.kda-chat{grid-template-columns:1fr}.kda-list{max-height:320px}}
+</style>
 
+<style id="kd-v7-style">
+input,textarea,select{-webkit-user-select:text!important;user-select:text!important}
+body.admin-mode #admin,body.admin-mode #admin *,#kdaOv,#kdaOv *{-webkit-user-select:text!important;user-select:text!important}
+@media(max-width:600px){
+ .kd-bg-badge{display:none}
+ .culture-float p,.culture-float-foot{display:none}
+ .culture-float-body{padding:8px 12px;align-items:center}
+ .culture-float-icon{font-size:30px;min-width:38px}
+ body{padding-bottom:84px}
+ body:before{animation:none}
+}
+</style>
+
+<script id="kd-v6-script">
+(function(){
+'use strict';
+const ADMIN_EMAIL='greatmm.100@gmail.com', BUCKET='registration-photos';
+const EMAIL_RE=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const kdr={list:[],active:null,adding:false,mode:'link',err:null};
+const kda={regs:[],convs:[],last:{},msgs:{},cur:null,regErr:null,tab:localStorage.getItem('kd_admin_tab')||'ov'};
+const isAdm=()=>String(currentUser?.email||'').trim().toLowerCase()===ADMIN_EMAIL;
+const fmt=d=>d?new Date(d).toLocaleString('hi-IN'):'';
+const uc=id=>userCode(id);
+const maskPhone=m=>String(m||'').length>4?'••••••'+String(m).slice(-4):'••••';
+function normPhone(v){v=String(v||'').replace(/[\s\-().]/g,'');
+  if(/^\+\d{10,15}$/.test(v))return v;
+  if(/^0?[6-9]\d{9}$/.test(v))return '+91'+v.slice(-10);
+  if(/^91[6-9]\d{9}$/.test(v))return '+'+v;
+  return null;}
+function toast(m,ok=true){let t=$('kdToast');
+  if(!t){t=document.createElement('div');t.id='kdToast';t.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);max-width:92vw;padding:12px 18px;border-radius:12px;color:#fff;font-weight:700;z-index:2147483647;box-shadow:0 8px 30px #0005;line-height:1.5';document.body.appendChild(t);}
+  t.style.background=ok?'#146c43':'#a52834';t.textContent=m;t.style.display='block';clearTimeout(t._h);t._h=setTimeout(()=>t.style.display='none',ok?2500:7000);}
+async function jf(url,opt){const r=await fetch(url,opt);const t=await r.text();let d=null;try{d=t?JSON.parse(t):null}catch(e){d={message:t}}
+  if(!r.ok)throw new Error(d?.msg||d?.message||d?.error_description||d?.error||('HTTP '+r.status));return d;}
+async function fresh(){if(authSession&&sessionIsExpiredSoon(authSession)&&authSession.refresh_token)await refreshAuthSession();}
+function download(name,mime,text){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:mime}));a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000);}
+async function fetchAll(table,query){let out=[],off=0;for(;;){const rows=await dbRequest(table,{query:query+'&limit=1000&offset='+off})||[];out=out.concat(rows);if(rows.length<1000||off>50000)break;off+=1000;}return out;}
+const kdrOk=()=>!!(isEmailVerified()&&kdr.active&&!kdr.active.blocked);
+
+/* ================= PUBLIC: REGISTRATION ================= */
+function kdrBuild(){
+  if($('register'))return;const submit=$('submit');if(!submit)return;
+  const s=document.createElement('section');s.className='section';s.id='register';
+  s.innerHTML=`<div class="container"><div class="title"><h2>📝 Registration</h2><span>Chat व रचना भेजने के लिए ज़रूरी</span></div><div class="formbox">
+<div class="kdr-note">🔐 Admin से बात करने और रचना भेजने के लिए पहले Registration ज़रूरी है: <b>Email OTP → नाम, पता, मोबाइल, (वैकल्पिक) photo</b>। Mobile OTP नहीं लगेगा। आपकी जानकारी <b>public में कभी नहीं दिखेगी</b>, सिर्फ़ Admin देख सकेगा।</div>
+<div id="kdrDb"></div><div id="kdrEmailOk"></div>
+<div id="kdrEmailStep" class="kdr-step"><h4 id="kdrEmailTitle" style="margin:0 0 8px">① Email Verification (ज़रूरी)</h4>
+<div class="formgrid"><input id="kdrEmail" type="email" autocomplete="email" placeholder="आपका Email *">
+<div><button type="button" class="btn" id="kdrSend">📩 Email OTP भेजें</button></div>
+<input id="kdrOtp" inputmode="numeric" maxlength="8" placeholder="Email में आया OTP" style="display:none">
+<div id="kdrVerWrap" style="display:none"><button type="button" class="btn" id="kdrVerify">✅ Verify करें</button></div></div>
+<p class="meta" style="margin:8px 0 0"><a href="#" id="kdrModeLink">पहले से registered हैं? Email OTP से Login करें</a></p>
+<div id="kdrEmailSt" class="meta" style="margin-top:6px"></div></div>
+<form id="kdrForm" class="kdr-step" style="display:none" novalidate><h4 style="margin:0 0 8px">② आपकी जानकारी</h4>
+<div class="formgrid"><input id="kdrName" placeholder="पूरा नाम *" autocomplete="name">
+<input id="kdrMob" type="tel" inputmode="tel" placeholder="Mobile नंबर * (OTP नहीं लगेगा)" autocomplete="tel">
+<textarea id="kdrAddr" class="full" style="min-height:90px" placeholder="पता (गाँव/मोहल्ला, पोस्ट, ज़िला, राज्य, पिन) *"></textarea>
+<div class="full"><label><b>📷 आपकी photo</b> <span class="meta">(वैकल्पिक)</span></label><input id="kdrPhoto" type="file" accept="image/jpeg,image/png,image/webp"><div class="meta">JPG/PNG/WebP, 5 MB तक। सिर्फ़ Admin को दिखेगी।</div></div>
+<div class="full" style="display:flex;gap:8px;flex-wrap:wrap"><button type="submit" class="btn" id="kdrSave">✅ Registration जमा करें</button><button type="button" class="btn" id="kdrCancel" style="background:#777;display:none">रद्द करें</button></div></div></form>
+<div id="kdrSt" class="meta" style="margin:8px 0"></div><div id="kdrMine"></div></div></div>`;
+  submit.before(s);
+  $('kdrForm').addEventListener('submit',e=>{e.preventDefault();kdrSubmit();});
+  const nav=document.querySelector('nav'),sub=[...nav.querySelectorAll('a')].find(a=>a.getAttribute('href')==='#submit');
+  if(sub){const a=document.createElement('a');a.href='#register';a.textContent='📝 Registration';sub.before(a);}
+}
+function kdrModeUi(){const l=kdr.mode==='login';
+  $('kdrEmailTitle').textContent=l?'① पुराना User — Email OTP से Login':'① Email Verification (ज़रूरी)';
+  $('kdrModeLink').textContent=l?'नया Registration करना है? यहाँ क्लिक करें':'पहले से registered हैं? Email OTP से Login करें';
+  $('kdrOtp').style.display='none';$('kdrVerWrap').style.display='none';$('kdrEmailSt').textContent='';}
+function kdrRender(){
+  if(!$('register'))return;const ok=isEmailVerified();
+  $('kdrDb').innerHTML=kdr.err?`<div class="kdr-note kdr-err">⚠️ Registration सुविधा में समस्या: ${esc(kdr.err)}<br>Admin: SQL setup चलाया गया है या नहीं जाँचें।</div>`:'';
+  $('kdrEmailStep').style.display=ok?'none':'';
+  $('kdrEmailOk').innerHTML=ok?`<div class="kdr-note">✅ Email verified: <b>${esc(maskEmail(currentUser.email))}</b> • आपकी User ID: <b>${esc(uc(currentUser.id))}</b></div>`:'';
+  const showForm=ok&&!kdr.err&&(kdr.adding||!kdr.list.length);
+  $('kdrForm').style.display=showForm?'':'none';
+  $('kdrCancel').style.display=kdr.list.length?'':'none';
+  $('kdrMine').innerHTML=(ok&&kdr.list.length)?`<h3 style="margin:14px 0 6px">✅ आपके Registrations</h3><p class="meta">Chat/रचना जिस Registration से भेजनी है उसे चुनें।</p>`+kdr.list.map(r=>`<label class="card" style="display:flex;gap:10px;align-items:flex-start;margin:8px 0;padding:12px;cursor:pointer"><input type="radio" name="kdrAct" value="${r.id}" ${kdr.active&&kdr.active.id===r.id?'checked':''} style="margin-top:6px;width:auto"><span><b>${esc(r.name)}</b> ${r.blocked?'🚫 Blocked':''}<br><span class="meta">📱 ${esc(maskPhone(r.mobile))} • 📍 ${esc(r.address)}<br>Reg #${r.id} • ${esc(fmt(r.created_at))}</span></span></label>`).join('')+(kdr.adding?'':'<button type="button" class="btn" id="kdrAdd">➕ दूसरा Registration भरें</button>'):'';
+}
+function kdrApply(){
+  const ok=kdrOk(),a=kdr.active,f=$('submissionForm');
+  if(f){
+    f.classList.toggle('kdr-locked',!ok);f.toggleAttribute('inert',!ok);
+    let g=$('kdrSubGate');if(!g){g=document.createElement('div');g.id='kdrSubGate';f.before(g);}
+    g.innerHTML=ok?`<div class="kdr-note">✅ रचना <b>${esc(a.name)}</b> (${esc(maskPhone(a.mobile))}) के Registration से जाएगी — नाम/मोबाइल अपने-आप भरे हैं।${kdr.list.length>1?`<br>Registration बदलें: <select id="kdrSubPick">${kdr.list.map(r=>`<option value="${r.id}"${r.id===a.id?' selected':''}>${esc(r.name)}</option>`).join('')}</select>`:''}</div>`
+      :`<div class="kdr-note kdr-warn">🔒 रचना भेजने के लिए पहले <a href="#register"><b>Registration</b></a> ज़रूरी है।${a&&a.blocked?' <b>आपकी ID block है।</b>':''}</div>`;
+    ['subName','subPhone'].forEach(id=>{const el=$(id);if(!el)return;if(ok){el.value=id==='subName'?a.name:a.mobile;el.readOnly=true;}else el.readOnly=false;});
+  }
+  const cn=$('chatName');if(cn){if(ok){cn.value=a.name;cn.readOnly=true;}else cn.readOnly=false;}
+  const ci=$('chatIdentity');
+  if(ci){let cg=$('kdrChatGate');if(!cg){cg=document.createElement('div');cg.id='kdrChatGate';ci.before(cg);}
+    cg.innerHTML=ok?`<div class="kdr-note">✅ Registered: <b>${esc(a.name)}</b> • 📱 ${esc(maskPhone(a.mobile))}</div>`
+      :`<div class="kdr-note kdr-warn">🔒 Admin से बात करने के लिए पहले <a href="#register"><b>Registration</b></a> (Email OTP + नाम + पता + मोबाइल) ज़रूरी है।${a&&a.blocked?'<br><b>🚫 आपकी ID block है।</b>':''}</div>`;}
+}
+function kdrSetActive(id){const r=kdr.list.find(x=>String(x.id)===String(id));if(r){kdr.active=r;localStorage.setItem('kd_active_reg',r.id);kdrRender();kdrApply();}}
+async function kdrLoadMine(){
+  if(!authSession?.access_token||!currentUser)return;
+  if(!isEmailVerified()){kdr.list=[];kdr.active=null;kdr.err=null;kdrRender();kdrApply();return;}
+  try{kdr.list=await dbRequest('registrations',{query:'?select=*&owner_id=eq.'+encodeURIComponent(currentUser.id)+'&order=created_at.desc'})||[];kdr.err=null;}
+  catch(e){kdr.list=[];kdr.err=e.message;}
+  const saved=localStorage.getItem('kd_active_reg');
+  kdr.active=kdr.list.find(r=>String(r.id)===saved)||kdr.list[0]||null;
+  kdrRender();kdrApply();
+}
+async function kdrSend(){
+  const email=$('kdrEmail').value.trim().toLowerCase(),st=$('kdrEmailSt');
+  if(!EMAIL_RE.test(email)){st.textContent='❌ सही email लिखें।';return;}
+  st.textContent='⏳ OTP भेजा जा रहा है…';
+  try{
+    if(kdr.mode!=='login'&&!authSession?.access_token&&!(await ensureSession()))throw new Error('Session नहीं बना — page refresh करें।');
+    if(kdr.mode==='login')await jf(AUTH_URL+'/otp',{method:'POST',headers:{apikey:SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({email,create_user:false})});
+    else{await fresh();await jf(AUTH_URL+'/user',{method:'PUT',headers:authHeaders(authSession.access_token),body:JSON.stringify({email})});}
+    $('kdrOtp').style.display='';$('kdrVerWrap').style.display='';
+    st.textContent='📩 OTP भेज दिया गया — Inbox/Spam देखें।';
+  }catch(e){const m=String(e.message);
+    st.textContent='❌ '+(/signups|not found|user not/i.test(m)?'इस Email से कोई पुराना account नहीं मिला — "नया Registration" चुनें। ':/already|registered|exists/i.test(m)?'यह Email पहले से registered है — नीचे "Email OTP से Login करें" चुनें। ':/rate|too many|seconds/i.test(m)?'Email limit — कुछ देर बाद कोशिश करें। ':'')+m;}
+}
+async function kdrVerify(){
+  const email=$('kdrEmail').value.trim().toLowerCase(),token=$('kdrOtp').value.trim(),st=$('kdrEmailSt');
+  if(!EMAIL_RE.test(email)||!/^\d{6,8}$/.test(token)){st.textContent='❌ Email और OTP सही भरें।';return;}
+  st.textContent='⏳ Verify हो रहा है…';
+  try{
+    let d;const login=kdr.mode==='login';
+    if(login)d=await jf(AUTH_URL+'/verify',{method:'POST',headers:{apikey:SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({type:'email',email,token})});
+    else{await fresh();d=await jf(AUTH_URL+'/verify',{method:'POST',headers:authHeaders(authSession.access_token),body:JSON.stringify({type:'email_change',email,token})});}
+    const s=d?.session||(d?.access_token?d:null);
+    if(login){if(!s)throw new Error('Login session नहीं मिला।');authSession=s;currentUser=s.user||d.user;}
+    else{if(s)authSession={...authSession,...s};currentUser=s?.user||d?.user||currentUser;}
+    if(currentUser?.email&&!currentUser.email_confirmed_at)currentUser.email_confirmed_at=new Date().toISOString();
+    authSession.user=currentUser;localStorage.setItem('kd_auth_session',JSON.stringify(authSession));
+    st.textContent='✅ Email verify हो गया।';
+    await loadProfile();await kdrLoadMine();
+  }catch(e){st.textContent='❌ OTP verify नहीं हुआ: '+e.message;}
+}
+async function kdrSubmit(){
+  const st=$('kdrSt'),name=$('kdrName').value.trim(),addr=$('kdrAddr').value.trim(),mob=normPhone($('kdrMob').value),file=$('kdrPhoto').files[0];
+  if(!isEmailVerified()){st.textContent='❌ पहले Email OTP verify करें।';return;}
+  if(!name||!addr){st.textContent='❌ नाम और पता भरना अनिवार्य है।';return;}
+  if(!mob){st.textContent='❌ सही Mobile नंबर लिखें (10 अंक, या +देशकोड के साथ)।';return;}
+  if(file&&!/^image\/(jpeg|png|webp)$/.test(file.type)){st.textContent='❌ Photo JPG/PNG/WebP होनी चाहिए।';return;}
+  if(file&&file.size>5*1024*1024){st.textContent='❌ Photo 5 MB से छोटी रखें।';return;}
+  const btn=$('kdrSave');btn.disabled=true;st.textContent='⏳ Registration जमा हो रहा है…';
+  try{
+    await fresh();let path=null;
+    if(file){path=currentUser.id+'/'+Date.now()+'-photo.'+({'image/png':'png','image/webp':'webp'}[file.type]||'jpg');await storageUpload(BUCKET,path,file);}
+    const rows=await dbRequest('registrations',{method:'POST',body:{owner_id:currentUser.id,name,address:addr,mobile:mob,photo_path:path}});
+    const row=Array.isArray(rows)?rows[0]:rows;if(row?.id)localStorage.setItem('kd_active_reg',row.id);
+    $('kdrForm').reset();kdr.adding=false;await kdrLoadMine();
+    st.innerHTML='<div class="kdr-note">🎉 Registration पूरा हुआ! ID: <b>'+esc(uc(currentUser.id))+'</b> — अब <a href="#submit">✍️ रचना भेजें</a> या <a href="#chat">💬 Admin से बात करें</a>।</div>';
+  }catch(e){st.textContent='❌ Registration नहीं हुआ: '+e.message+(/row-level security/i.test(e.message)?' — SQL setup चलाएँ, या Email OTP दोबारा verify/login करें।':'');}
+  finally{btn.disabled=false;}
+}
+async function kdrSubmitWork(){
+  const st=$('submissionStatus');
+  if(!kdrOk()){st.textContent='❌ पहले Registration पूरा करें।';need();return;}
+  const a=kdr.active,g=id=>$(id).value.trim();
+  const bio=g('subBio'),title=g('subTitle'),category=$('subCategory').value,method=$('subMethod').value,content=g('subContent'),photo=$('subPhoto').files[0],file=$('subFile').files[0];
+  if(!bio||!title||!category){st.textContent='❌ Bio, शीर्षक और विधा भरें।';return;}
+  if(method==='typing'&&!content){st.textContent='❌ अपनी रचना टाइप करें।';return;}
+  if(method==='file'&&!file){st.textContent='❌ रचना की फ़ाइल चुनें।';return;}
+  if(photo&&photo.size>5*1024*1024){st.textContent='❌ फोटो 5 MB से छोटी रखें।';return;}
+  if(file&&file.size>25*1024*1024){st.textContent='❌ फ़ाइल 25 MB से छोटी रखें।';return;}
+  st.textContent='⏳ रचना भेजी जा रही है…';
+  try{
+    await fresh();const stamp=Date.now(),uid=currentUser.id,clean=n=>n.replace(/[^a-zA-Z0-9._-]/g,'_');
+    let photoPath=null,filePath=null;
+    if(photo)photoPath=await storageUpload('submission-files','authors/'+uid+'/'+stamp+'-'+clean(photo.name),photo);
+    else if(a.photo_path){try{const blob=await storageDownload(BUCKET,a.photo_path);photoPath=await storageUpload('submission-files','authors/'+uid+'/'+stamp+'-registration.jpg',blob);}catch(e){photoPath=null;console.warn('reg photo copy',e);}}
+    if(file)filePath=await storageUpload('submission-files','works/'+uid+'/'+stamp+'-'+clean(file.name),file);
+    const payload={user_id:currentProfile?.user_id||uc(uid),name:a.name,phone:a.mobile,bio,title,category,content:method==='typing'?content:('यह रचना फ़ाइल के रूप में भेजी गई है: '+file.name),status:'pending',submission_method:method,file_path:filePath,author_photo_path:photoPath,registration_id:a.id,email:currentUser.email,address:a.address};
+    try{await dbRequest('submissions',{method:'POST',body:payload});}
+    catch(e){if(/column|schema cache/i.test(e.message)){['registration_id','email','address'].forEach(k=>delete payload[k]);await dbRequest('submissions',{method:'POST',body:payload});}else throw e;}
+    st.textContent='✅ रचना भेज दी गई। Admin की स्वीकृति के बाद ही प्रकाशित होगी।';
+    $('submissionForm').reset();$('subFileWrap').style.display='none';kdrApply();
+    if(isAdmin&&typeof refreshAdmin==='function')await refreshAdmin();
+  }catch(err){st.textContent='❌ रचना भेजी नहीं जा सकी: '+err.message+(/row-level security/i.test(err.message)?' (Registration/Block जाँचें)':'');}
+}
+function need(){const a=kdr.active;
+  if(a&&a.blocked){toast('🚫 आपकी ID Admin द्वारा block है।',false);return;}
+  toast(!isEmailVerified()?'🔐 पहले Registration (Email OTP) पूरा करें।':'📝 पहले Registration फ़ॉर्म भरें।',false);
+  $('register')?.scrollIntoView({behavior:'smooth',block:'start'});}
+
+/* gates (capture phase = original handlers se pehle) */
+document.addEventListener('click',e=>{
+  if(e.target.closest&&e.target.closest('#startChat,#sendChat')&&!kdrOk()){e.preventDefault();e.stopImmediatePropagation();need();}
+  const h=e.target.closest&&e.target.closest('.hero .btn');
+  if(h&&!kdrOk()){e.preventDefault();$('register')?.scrollIntoView({behavior:'smooth'});}
+},true);
+document.addEventListener('submit',e=>{if(e.target.id==='submissionForm'){e.preventDefault();e.stopImmediatePropagation();kdrSubmitWork();}},true);
+document.addEventListener('click',e=>{
+  const b=e.target.closest&&e.target.closest('button,a');if(!b)return;
+  if(b.id==='kdrSend')kdrSend();
+  else if(b.id==='kdrVerify')kdrVerify();
+  else if(b.id==='kdrAdd'){kdr.adding=true;kdrRender();$('kdrForm').scrollIntoView({behavior:'smooth',block:'center'});}
+  else if(b.id==='kdrCancel'){kdr.adding=false;kdrRender();}
+  else if(b.id==='kdrModeLink'){e.preventDefault();kdr.mode=kdr.mode==='link'?'login':'link';kdrModeUi();}
+});
+document.addEventListener('change',e=>{
+  if(e.target.name==='kdrAct'||e.target.id==='kdr
 </body>
 </html>
