@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block admin and internal paths from indexing
+Disallow: /admin.html
+Disallow: /user.html
+Disallow: /api/
+
+Sitemap: https://www.kurmali.co.in/sitemap.xml
